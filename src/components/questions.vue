@@ -170,7 +170,6 @@ export default {
                     }
                 }, 1000); 
 
-                console.log(this.correctAnswersChecked);
                 if (this.correctAnswersChecked === 2) {
                     this.ableToCheck = true;
                     this.ableToPress = true;
@@ -237,7 +236,7 @@ export default {
             <div class="level"><b>טכניקות מסירה</b></div>
             <div id="question">{{ listOfQuestions[Number(questionCounter)]["question"] }}</div>
         </div>
-        <div v-for="answer in listOfQuestions" :key="answer.question" v-if="listOfQuestions[Number(questionCounter)]['question'] === answer.question" class="containerForAnswers">
+        <div v-for="answer in listOfQuestions" :key="answer.question" v-show="listOfQuestions[Number(questionCounter)]['question'] === answer.question" class="containerForAnswers">
             <button v-for="(content, key) in answer" :key="key" v-show="key.includes('answer')" class="answers" @click="pickAnswers" :disabled="ableToPress">{{ content }}</button>
         </div>
         <button type="button" id="check" @click="checkAnswer" :disabled="ableToCheck">בדוק אותי</button>
@@ -253,7 +252,6 @@ export default {
     margin-top: 1vh;
     direction: rtl;
     text-align: center;
-    /* color: black; */
     align-items: center;
     justify-content: flex-start;
     height: 100vh;
@@ -278,7 +276,7 @@ export default {
     font-family: "heebo";
     color: white;
     position: relative;
-    top: 22vh;
+    top: 17vh;
 }
 
 .questionContainer {
@@ -297,7 +295,7 @@ export default {
     margin-top: 3vh;
     font-size: 6vw;
     direction: rtl;
-    width: 90vw;
+    width: 87vw;
 }
 
 .answers {
@@ -309,13 +307,13 @@ export default {
     color: white;
     margin-top: 1vh;
     width: 33vw;
-    height: 8.3vh;
-    font-size: 4.45vw;
+    height: 10.5vh;
+    font-size: 4.4vw;
 }
 
 .containerForAnswers {
     width: 100vw;
-    height: 20vh;
+    height: 25vh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;

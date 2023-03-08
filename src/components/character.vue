@@ -87,7 +87,7 @@ export default {
 
 #soldier {
     position: relative;
-    top: 7vh;
-    height: 70vh;
+    top: 15vh;
+    height: 75vh;
 }
 </style>

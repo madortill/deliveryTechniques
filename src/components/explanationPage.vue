@@ -5,6 +5,7 @@
             return {
                 pressed: false,
                 chosenButton: "",
+                help: "hide",
                 pressedButton: [], 
                 texts: [
                     {
@@ -87,7 +88,11 @@
                 event.currentTarget.style.backgroundImage = `url("src/assets/images/currently.svg")`;
             }, 
             showInstruction(event) {
-                
+                if (this.help === "hide") {
+                    this.help = "show";
+                } else {
+                    this.help = "hide";
+                }
             }
         }, 
         components: { instructionsVue }
@@ -98,7 +103,7 @@
     <div id="explanationPage">
         <div class="summary" v-if="pressed === false">
             <img src="@/assets/images/odot2.svg" alt="help" id="help" @click="showInstruction"/>
-            <div id="instruction" refs="instruction">בלחיצה על טכניקת המסירה יופיע ההסבר המתאים</div>
+            <div id="instruction" ref="instruction" :class="help === 'hide' ? 'hidden' : 'show'">בלחיצה על טכניקת המסירה יופיע ההסבר המתאים</div>
             <div id="videoSummary">
                 <div class="buttonContainer">
                     <button type="button" class="buttons" v-for="info in texts" :key="info.buttonName + ' btn'" @click="recognizeButton">{{ info.buttonName }}</button>
@@ -139,23 +144,32 @@
     direction: rtl;
     text-align: center;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.459);
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.856);
     border-radius: 3vw;
     padding-top: 1vh;
     padding-bottom: 1vh;
-    top: 4vh;
-    display: none;
+    top: 2vh;
+}
+
+.hidden {
+    visibility: hidden;
+} 
+
+.show {
+    visibility: visible;
 }
 
 .buttonContainer {
-    height: 22vh;
+    height: 24vh;
+    position: relative;
+    bottom: 3vh;
     width: 110vw;
-    margin-top: 9vh;
 }
 
 #help {
   width: 7vw;
-  height: 3.5vh;
+  height: 4vh;
   position: relative;
   left: 45vw;
   top: 1vh;
@@ -190,15 +204,15 @@
     background-image: url("@/assets/images/board.png");
     background-size: 100% 100%;
     position: relative;
-    bottom: 3vh;
+    bottom: 7vh;
     left: 1vw;
     width: 108vw;
-    height: 50vh;
+    height: 53vh;
 }
 
 .buttons {
     width: 31vw;
-    height: 4vh;
+    height: 5vh;
     margin: 1.1vw;
     background-image: url("@/assets/images/answerButton.png");
     background-size: 100% 100%;
@@ -207,16 +221,15 @@
     border-style: none;
     position: relative;
     color: white;
-    top: 4vh;
     left: 5vw;
     font-family: "heebo";
 }
 
 #text {
     padding-top: 4.3vh;
-    padding-left: 3.3vh;
-    font-size: 5vw;
+    padding-left: 4.4vh;
+    font-size: 4.75vw;
     direction: rtl;
-    width: 86vw;
+    width: 85vw;
 }
 </style>

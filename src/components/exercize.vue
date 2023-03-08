@@ -45,7 +45,7 @@ export default {
 }
 
 #character {
-    height: 80vh;
+    height: 100vh;
 }
 
 #exercize {

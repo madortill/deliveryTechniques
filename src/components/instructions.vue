@@ -42,8 +42,8 @@ export default {
 .board {
     background-image: url("@/assets/images/board.png");
     background-size: 100% 100%;
-    height: 35vh;
-    width: 110vw;
+    height: 37vh;
+    width: 108vw;
     position: relative;
     bottom: 7.5vh;
     display: flex;
@@ -51,7 +51,6 @@ export default {
     align-items: center;
 }
 .continue {
-    margin-top: 2vh;
     text-align: center;
     width: 38vw;
     height: 6vh;

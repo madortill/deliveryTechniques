@@ -42,7 +42,7 @@ export default {
 <style scoped>
 @font-face {
   font-family: "heebo";
-  src: url("C:/Users/USER/Documents/projects/לומדת טכניקת מסירה/src/assets/Heebo/Heebo-VariableFont_wght.ttf");
+  src: url("src/assets/Heebo/Heebo-VariableFont_wght.ttf");
 }
 
 #app {
@@ -100,15 +100,15 @@ export default {
 }
 
 #beginLesson {
-  width: 42vw;
-  height: 7vh;
+  width: 45vw;
+  height: 10vh;
   border-style: none;
   padding-bottom: 1vh;
   color: white;
   background-color: transparent;
   font-size: 6vw;
   position: relative;
-  top: 28vh;
+  top: 24.5vh;
   font-family: "heebo";
   background-image: url("@/assets/images/continueButton.png");
   background-size: 100% 100%;
@@ -139,7 +139,7 @@ export default {
 
 #icon {
   width: 7vw;
-  height: 3.5vh;
+  height: 4vh;
   position: relative;
   left: 45vw;
   top: 1vh;

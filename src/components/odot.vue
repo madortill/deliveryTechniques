@@ -107,13 +107,14 @@ export default {
 
 #allInfo {
     margin-top: 10vh;
+    line-height: 3.4vh;
     background-image: url("src/assets/images/explanationBoard.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 85vw;
-    padding-top: 13vw;
+    padding-top: 8vw;
     padding-left: 5vw;
     padding-right: 5vw;
-    height: 69vh;
+    height: 70.5vh;
 }
 </style>

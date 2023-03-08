@@ -1,4 +1,4 @@
-<script >
+<script>
 import ExplanationPage from './explanationPage.vue';
 
 export default {
