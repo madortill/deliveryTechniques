@@ -82,7 +82,8 @@
                 }
 
                 for (let i = 0; i < this.pressedButton.length; i++) {
-                    this.pressedButton[i].style.backgroundImage = `url("src/assets/images/beenThere.svg")`;
+                    this.pressedButton[i].style.backgroundImage = `url('src/assets/images/beenThere.svg')`;
+
                 }
 
                 event.currentTarget.style.backgroundImage = `url("src/assets/images/currently.svg")`;
