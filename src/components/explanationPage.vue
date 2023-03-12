@@ -76,17 +76,18 @@
             },
             recognizeButton(event) {
                 this.chosenButton = event.currentTarget.innerText;
+                event.currentTarget.classList.remove("answers");
 
                 if (!this.pressedButton.includes(event.currentTarget)) {
                     this.pressedButton.push(event.currentTarget);
                 }
 
                 for (let i = 0; i < this.pressedButton.length; i++) {
-                    this.pressedButton[i].style.backgroundImage = `url('@/assets/images/beenThere.svg')`;
-
+                    this.pressedButton[i].classList.remove("current");
+                    this.pressedButton[i].classList.add("beenThere");
                 }
-
-                event.currentTarget.style.backgroundImage = `url("@/assets/images/currently.svg")`;
+                event.currentTarget.classList.remove("beenThere");
+                event.currentTarget.classList.add("current");
             }, 
             showInstruction(event) {
                 if (this.help === "hide") {
@@ -107,7 +108,7 @@
             <div id="instruction" ref="instruction" :class="help === 'hide' ? 'hidden' : 'show'">בלחיצה על טכניקת המסירה יופיע ההסבר המתאים</div>
             <div id="videoSummary">
                 <div class="buttonContainer">
-                    <button type="button" class="buttons" v-for="info in texts" :key="info.buttonName + ' btn'" @click="recognizeButton">{{ info.buttonName }}</button>
+                    <button type="button" class="buttons answers" v-for="info in texts" :key="info.buttonName + ' btn'" @click="recognizeButton">{{ info.buttonName }}</button>
                 </div>
                 <div class="board">
                     <div v-for="info in texts" :key="info.buttonName + ' text'" v-show="chosenButton === info.buttonName" id="text">
@@ -161,6 +162,17 @@
     visibility: visible;
 }
 
+.current {
+    background-image: url("@/assets/images/currently.svg");
+}
+
+.beenThere {
+    background-image: url("@/assets/images/beenThere.svg");
+}
+
+.answers {
+    background-image: url("@/assets/images/answerButton.png");
+}
 .buttonContainer {
     height: 24vh;
     position: relative;
@@ -215,7 +227,7 @@
     width: 31vw;
     height: 5vh;
     margin: 1.1vw;
-    background-image: url("@/assets/images/answerButton.png");
+    /* background-image: url("@/assets/images/answerButton.png"); */
     background-size: 100% 100%;
     font-size: 4.5vw;
     background-color: transparent;
