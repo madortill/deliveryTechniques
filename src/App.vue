@@ -20,7 +20,7 @@ export default {
 <template>
   <div id="app">
     <div class="openingPage" v-if="page==='start'">
-      <img src="src\assets\images\odot2.svg" alt="odot" id="icon" @click="page='odot'" />
+      <img src="@\assets\images\odot2.svg" alt="odot" id="icon" @click="page='odot'" />
       <div class="boardAndButton">
         <div class="container playAnimation" id="board">
           <div id="openingTitle" class="playAnimationOnText">
@@ -42,7 +42,7 @@ export default {
 <style scoped>
 @font-face {
   font-family: "heebo";
-  src: url("src/assets/Heebo/Heebo-VariableFont_wght.ttf");
+  src: url("@/assets/Heebo/Heebo-VariableFont_wght.ttf");
 }
 
 #app {

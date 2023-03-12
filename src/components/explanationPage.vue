@@ -82,10 +82,10 @@
                 }
 
                 for (let i = 0; i < this.pressedButton.length; i++) {
-                    this.pressedButton[i].style.backgroundImage = `url("src/assets/images/beenThere.svg")`;
+                    this.pressedButton[i].style.backgroundImage = `url("@/assets/images/beenThere.svg")`;
                 }
 
-                event.currentTarget.style.backgroundImage = `url("src/assets/images/currently.svg")`;
+                event.currentTarget.style.backgroundImage = `url("@/assets/images/currently.svg")`;
             }, 
             showInstruction(event) {
                 if (this.help === "hide") {

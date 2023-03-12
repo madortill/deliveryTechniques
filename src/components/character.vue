@@ -5,42 +5,42 @@ export default {
         return {
             characterImages: [
                 {
-                    level0: "./src/assets/images/soldier1Glow.png",
+                    level0: "./@/assets/images/soldier1Glow.png",
                     sayingBubble: "אוי, אני לא יודעת מה להגיד להם",
                     changes: true
                 }, 
                 {
-                    level1: "./src/assets/images/soldier1Glow.png"
+                    level1: "./@/assets/images/soldier1Glow.png"
                 },
                 {
-                    level2: "./src/assets/images/soldier1Glow.png"
+                    level2: "./@/assets/images/soldier1Glow.png"
                 }, 
                 {
-                    level3: "./src/assets/images/soldier2Glow.png"
+                    level3: "./@/assets/images/soldier2Glow.png"
                 },
                 {
-                    level4: "./src/assets/images/soldier2Glow.png"
+                    level4: "./@/assets/images/soldier2Glow.png"
                 }, 
                 {
-                    level5: "./src/assets/images/soldier2Glow.png"
+                    level5: "./@/assets/images/soldier2Glow.png"
                 }, 
                 {
-                    level6: "./src/assets/images/soldier3Glow.png"
+                    level6: "./@/assets/images/soldier3Glow.png"
                 }, 
                 {
-                    level7: "./src/assets/images/soldier3Glow.png"
+                    level7: "./@/assets/images/soldier3Glow.png"
                 },
                 {
-                    level8: "./src/assets/images/soldier3Glow.png"
+                    level8: "./@/assets/images/soldier3Glow.png"
                 }, 
                 {
-                    level9: "./src/assets/images/soldier4Glow.png"
+                    level9: "./@/assets/images/soldier4Glow.png"
                 }, 
                 {
-                    level10: "./src/assets/images/soldier4Glow.png"
+                    level10: "./@/assets/images/soldier4Glow.png"
                 }, 
                 {
-                    level11: "./src/assets/images/soldier4Glow.png"
+                    level11: "./@/assets/images/soldier4Glow.png"
                 }
             ],
             dontPressCharacter: false
