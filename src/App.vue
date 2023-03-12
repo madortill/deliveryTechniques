@@ -47,7 +47,7 @@ export default {
 
 body {
   margin: 0;
-  height: 90%;
+  height: 60%;
   width: 100%;
 }
 
