@@ -95,6 +95,12 @@
                 } else {
                     this.help = "hide";
                 }
+            }, 
+            prevPage() {
+                this.$emit('backPage');
+            }, 
+            showPage() {
+                this.pressed = false;
             }
         }, 
         components: { instructionsVue }
@@ -125,8 +131,9 @@
                 </div>
             </div>
             <button type="button" id="nextPage" @click="nextPage">נמשיך לתרגול</button>
+            <button type="button" id="prevPage" @click="prevPage">חזרה לסרטון</button>
         </div>
-        <instructionsVue v-else></instructionsVue>
+        <instructionsVue v-else @prevPage="showPage"></instructionsVue>
     </div>
 </template> 
 
@@ -206,6 +213,23 @@
     font-family: "heebo";
     position: fixed;
     bottom: 8vh;
+    left: 4vw;
+    background-image: url("@/assets/images/continueButton.png");
+    background-size: 100% 100%;
+    background-color: transparent;
+    border-style: none;
+    color: white;
+}
+
+#prevPage {
+    font-size: 5.5vw;
+    padding-bottom: 1vh;
+    width: 42vw;
+    height: 7vh;
+    font-family: "heebo";
+    position: fixed;
+    bottom: 8vh;
+    right: 4vw;
     background-image: url("@/assets/images/continueButton.png");
     background-size: 100% 100%;
     background-color: transparent;
@@ -227,7 +251,6 @@
     width: 31vw;
     height: 5vh;
     margin: 1.1vw;
-    /* background-image: url("@/assets/images/answerButton.png"); */
     background-size: 100% 100%;
     font-size: 4.5vw;
     background-color: transparent;

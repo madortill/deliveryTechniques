@@ -94,11 +94,11 @@ body {
 
 #openingTitle {
   margin-top: 7vh;
-  font-size: 17vw;
+  font-size: 16vw;
   line-height: 9vh;
   text-align: center;
   direction: rtl;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .intoduction {
@@ -166,11 +166,11 @@ body {
 @keyframes smallerText {
   0% {
     width: 100vw;
-    font-size: 17vw;
+    font-size: 16vw;
   }
   100% {
     width: 70vw;
-    font-size: 20vw;
+    font-size: 18vw;
   }
 }
 

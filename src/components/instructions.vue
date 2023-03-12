@@ -7,6 +7,11 @@ export default {
             nextPage: false
         }
     },
+    methods: {
+        backPage() {
+            this.$emit('prevPage');
+        }
+    },
     components: { Exercize }
 
 };
@@ -23,7 +28,10 @@ export default {
                 <div class="text">
                     המפקדת מאחרת לשיעור אבל היא לא מדוגמת ולא מוכנה לעמוד מול הקהל. כאן התפקיד שלכם נכנס לתמונה: תענו על השאלות נכון וכך תוכלו לעזור לה להתכונן לשיעור. 
                 </div>
-                <button class="continue" type="button" @click="nextPage = true">אעזור לה!</button>
+                <div class="buttonCont">
+                    <button class="continue" type="button" @click="nextPage = true">אעזור לה!</button>
+                    <button class="back" type="button" @click="backPage">רגע רוצה לחזור על החומר</button>
+                </div>
             </div>
             <img src="@/assets/images/table.png" alt="table" class="table" />
         </div>
@@ -37,12 +45,19 @@ export default {
 .text {
     text-align: center;
     padding-top: 4vh;
-    width: 90vw;
+    width: 85vw;
+}
+
+.buttonCont {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 80vw;
+    justify-content: space-between;
 }
 .board {
     background-image: url("@/assets/images/board.png");
     background-size: 100% 100%;
-    height: 40vh;
+    height: 42vh;
     width: 108vw;
     position: relative;
     bottom: 7.5vh;
@@ -50,11 +65,25 @@ export default {
     flex-direction: column;
     align-items: center;
 }
+
+.back {
+    text-align: center;
+    margin-top: 1vh;
+    width: 36vw;
+    height: 8vh;
+    color: white;
+    font-family: "heebo";
+    font-size: 4.5vw;
+    background-image: url("@/assets/images/continueButton.png");
+    background-color: transparent;
+    border-style: none;
+    background-size: 100% 100%;  
+}
 .continue {
     text-align: center;
-    margin-top: 2vh;
-    width: 38vw;
-    height: 6vh;
+    margin-top: 1vh;
+    width: 36vw;
+    height: 8vh;
     color: white;
     font-family: "heebo";
     font-size: 5.5vw;
@@ -74,7 +103,7 @@ export default {
 
 .table {
     position: relative;
-    bottom: 2vh;
+    bottom: 4vh;
     width: 100vw;
     height: 40vh;
 }

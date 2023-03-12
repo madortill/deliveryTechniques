@@ -3,12 +3,15 @@ import ExplanationPage from './explanationPage.vue';
 
 export default {
   data() {
-      return {
-        nextPage: "video"
-      };
+    return {
+      nextPage: "video"
+    };
   },
   methods: {
-      
+    showPage() {
+      console.log("hi");
+      this.nextPage = 'video';
+    }
   },
   components: { ExplanationPage }
   };
@@ -22,7 +25,7 @@ export default {
       </div>
       <button id="toExplanation" @click="nextPage = 'explain'">לתקציר</button>
     </div>
-    <ExplanationPage v-else></ExplanationPage>
+    <ExplanationPage v-else @backPage="showPage"></ExplanationPage>
   </div>
 </template>
 
