@@ -42,7 +42,7 @@ export default {
 .board {
     background-image: url("@/assets/images/board.png");
     background-size: 100% 100%;
-    height: 37vh;
+    height: 40vh;
     width: 108vw;
     position: relative;
     bottom: 7.5vh;
@@ -52,6 +52,7 @@ export default {
 }
 .continue {
     text-align: center;
+    margin-top: 2vh;
     width: 38vw;
     height: 6vh;
     color: white;
@@ -73,7 +74,7 @@ export default {
 
 .table {
     position: relative;
-    bottom: 5vh;
+    bottom: 2vh;
     width: 100vw;
     height: 40vh;
 }
