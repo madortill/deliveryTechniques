@@ -45,10 +45,13 @@ export default {
   src: url("@/assets/Heebo/Heebo-VariableFont_wght.ttf");
 }
 
-#app {
+body {
   margin: 0;
   height: 100vh;
   width: 100vw;
+}
+
+#app {
   background-image: url("@/assets/images/background.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -108,7 +111,7 @@ export default {
   background-color: transparent;
   font-size: 6vw;
   position: relative;
-  top: 24.5vh;
+  top: 20.5vh;
   font-family: "heebo";
   background-image: url("@/assets/images/continueButton.png");
   background-size: 100% 100%;
