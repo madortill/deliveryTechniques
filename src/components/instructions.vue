@@ -30,7 +30,7 @@ export default {
                 </div>
                 <div class="buttonCont">
                     <button class="continue" type="button" @click="nextPage = true">אעזור לה!</button>
-                    <button class="back" type="button" @click="backPage">רגע רוצה לחזור על החומר</button>
+                    <button class="back" type="button" @click="backPage">לחזור על החומר</button>
                 </div>
             </div>
             <img src="@/assets/images/table.png" alt="table" class="table" />
@@ -73,7 +73,7 @@ export default {
     height: 8vh;
     color: white;
     font-family: "heebo";
-    font-size: 4.5vw;
+    font-size: 5vw;
     background-image: url("@/assets/images/continueButton.png");
     background-color: transparent;
     border-style: none;

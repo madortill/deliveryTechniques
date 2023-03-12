@@ -248,16 +248,16 @@
 }
 
 .buttons {
-    width: 31vw;
+    width: 32vw;
     height: 5vh;
-    margin: 1.1vw;
+    margin: 1vw;
     background-size: 100% 100%;
     font-size: 4.5vw;
     background-color: transparent;
     border-style: none;
     position: relative;
     color: white;
-    left: 5vw;
+    left: 4vw;
     font-family: "heebo";
 }
 
