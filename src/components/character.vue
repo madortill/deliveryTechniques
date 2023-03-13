@@ -5,15 +5,15 @@ export default {
         return {
             characterImages: [
                 {
-                    level0: "./@/assets/images/soldier1Glow.png",
+                    level0: "src/assets/images/soldier1Glow.png",
                     sayingBubble: "אוי, אני לא יודעת מה להגיד להם",
                     changes: true
                 }, 
                 {
-                    level1: "./@/assets/images/soldier1Glow.png"
+                    level1: "src/assets/images/soldier1Glow.png"
                 },
                 {
-                    level2: "./@/assets/images/soldier1Glow.png"
+                    level2: "src/assets/images/soldier1Glow.png"
                 }, 
                 {
                     level3: "./@/assets/images/soldier2Glow.png"
@@ -45,7 +45,11 @@ export default {
     }, 
     computed: {
         currentCharacter() {
-            return(this.characterImages[this.questionCounter][`level${this.questionCounter}`]); 
+            console.log(this.characterImages[this.questionCounter][`level${this.questionCounter}`])
+            return (
+                // `level${this.questionCounter}`
+                this.characterImages[this.questionCounter][`level${this.questionCounter}`]
+            ); 
         }
     }, 
     methods: {
@@ -67,7 +71,7 @@ export default {
 
 <template>
     <div id="character">
-        <!-- <div id="soldier" @click="updateQuestion" :disabled="dontPressCharacter" class="level0"></div> -->
+        <!-- <div id="soldier" @click="updateQuestion" :disabled="dontPressCharacter" :class="currentCharacter"></div> -->
         <img :src="currentCharacter" alt="soldier" id="soldier" @click="updateQuestion" :disabled="dontPressCharacter"/>
     </div>
 </template>
@@ -75,7 +79,7 @@ export default {
 
 
 <style scoped>
-/* .level0 {
+.level0 {
     background-image: url("@/assets/images/soldier1Glow.png");
 }
 
@@ -84,19 +88,19 @@ export default {
 }
 
 .level2 {
-    background-image: url("./@/assets/images/soldier1Glow.png");
+    background-image: url("@/assets/images/soldier1Glow.png");
 }
 
 .level3 {
-    background-image: url("./@/assets/images/soldier2Glow.png");
+    background-image: url("@/assets/images/soldier2Glow.png");
 }
 
 .level4 {
-    background-image: url("./@/assets/images/soldier2Glow.png");
+    background-image: url("@/assets/images/soldier2Glow.png");
 }
 
 .level5 {
-    background-image: url("./@/assets/images/soldier2Glow.png");
+    background-image: url("@/assets/images/soldier2Glow.png");
 }
 
 .level6 {
@@ -104,28 +108,28 @@ export default {
 }
 
 .level7 {
-    background-image: url("./@/assets/images/soldier3Glow.png");
+    background-image: url("@/assets/images/soldier3Glow.png");
 }
 
 .level8 {
-    background-image: url("./@/assets/images/soldier3Glow.png");
+    background-image: url("@/assets/images/soldier3Glow.png");
 }
 
 .level9 {
-    background-image: url("./@/assets/images/soldier4Glow.png");
+    background-image: url("@/assets/images/soldier4Glow.png");
 }
 
 .level9 {
-    background-image: url("./@/assets/images/soldier4Glow.png");
+    background-image: url("@/assets/images/soldier4Glow.png");
 }
 
 .level10 {
-    background-image: url("./@/assets/images/soldier4Glow.png");
+    background-image: url("@/assets/images/soldier4Glow.png");
 }
 
 .level11 {
-    background-image: url("./@/assets/images/soldier4Glow.png");
-} */
+    background-image: url("@/assets/images/soldier4Glow.png");
+}
 
 
 #character {
@@ -137,6 +141,8 @@ export default {
 }
 
 #soldier {
+    background-size: 100% 100%;
+    width: 60vw;
     position: relative;
     top: 15vh;
     height: 75vh;
