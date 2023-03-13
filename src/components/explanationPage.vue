@@ -183,7 +183,7 @@
 .buttonContainer {
     height: 24vh;
     position: relative;
-    bottom: 3vh;
+    bottom: 4vh;
     width: 110vw;
 }
 
@@ -248,8 +248,8 @@
 }
 
 .buttons {
-    width: 32vw;
-    height: 5vh;
+    width: 31vw;
+    height: 6vh;
     margin: 1vw;
     background-size: 100% 100%;
     font-size: 4.5vw;
