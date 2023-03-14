@@ -30,7 +30,7 @@ export default {
                 },
                 {
                     question: "איזה טכניקת מסירה נפגעת בעת העברת השיעור של הרב, על פי התמונה?",
-                    src: "",
+                    src: "https://lh4.googleusercontent.com/Ezh_FXiYmVyAkwJ6SFS815F5caWhBdqXJT9MfIs1nIdpXcdokTCnRe2ymqn103botttD5Yu0ri4Sf8Wt1cHPZMQWf_TLnawpuGUj-khdZCbQxHuFxc2AO0uy_IcCvewUpg=w740",
                     answer1: "תנועת גוף", 
                     answer2: "הופעה", 
                     answer3: "תנועת ידיים",
@@ -118,8 +118,8 @@ export default {
             ableToPress: false, 
             ableToCheck: true,
             answerChecked: "",
-            correctAnswersChecked: 0
-
+            correctAnswersChecked: 0, 
+            help: "hide"
         }
     },
     methods: {
@@ -145,7 +145,7 @@ export default {
                         if (this.correctAnswersArray[j] !== this.multipleChosenOptions[i].innerText) {
                             this.answerChecked = "incorrect";
                         } else {
-                            this.correctAnswersChecked++;
+                            this.correctAnswersChecked++; 
                             this.answerChecked = "correct";
                             break;
                         }
@@ -224,6 +224,13 @@ export default {
                 this.chosenOptions = event.currentTarget;
                 event.currentTarget.classList.toggle("picked");
             }
+        },
+        showPicture() {
+            if (this.help === "hide") {
+                this.help = "show";
+            } else {
+                this.help = "hide";
+            }
         }
     }  
 };
@@ -236,6 +243,8 @@ export default {
         <div class="questionContainer">
             <div class="level"><b>טכניקות מסירה</b></div>
             <div id="question">{{ listOfQuestions[Number(questionCounter)]["question"] }}</div>
+            <div id="help" v-show="this.questionCounter === 3" @click="showPicture">לצפייה בתמונה</div>
+            <img src="https://lh4.googleusercontent.com/Ezh_FXiYmVyAkwJ6SFS815F5caWhBdqXJT9MfIs1nIdpXcdokTCnRe2ymqn103botttD5Yu0ri4Sf8Wt1cHPZMQWf_TLnawpuGUj-khdZCbQxHuFxc2AO0uy_IcCvewUpg=w740" alt="Captionless Image" id="picture" :class="help === 'hide' ? 'hidden' : 'show'" />
         </div>
         <div v-for="answer in listOfQuestions" :key="answer.question" v-show="listOfQuestions[Number(questionCounter)]['question'] === answer.question" class="containerForAnswers">
             <button v-for="(content, key) in answer" :key="key" v-show="key.includes('answer')" class="answers" @click="pickAnswers" :disabled="ableToPress">{{ content }}</button>
@@ -246,6 +255,24 @@ export default {
 
 
 <style scoped>
+
+.hidden {
+    visibility: hidden;
+} 
+
+.show {
+    visibility: visible;
+}
+
+#help {
+  width: 37vw;
+  height: 6vh;
+  background-image: url("@/assets/images/continueButton.png");
+  background-size: 100% 100% ;
+  color: white;
+  margin-right: 40vw;
+}
+
 #questions {
     padding: 2vh;
     display: flex;
@@ -276,16 +303,16 @@ export default {
     background-size: 100% 100%;
     font-family: "heebo";
     color: white;
-    position: relative;
-    top: 17vh;
+    position: fixed;
+    bottom: 8vh;
 }
 
 .questionContainer {
-    margin-top: 10vh;
+    margin-top: 8vh;
     background-image: url("@/assets/images/board.png");
     background-size: 100% 100%;
     width: 100vw;
-    height: 30vh;
+    height: 38vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -310,6 +337,12 @@ export default {
     width: 33vw;
     height: 10.5vh;
     font-size: 4.4vw;
+}
+
+#picture {
+    width: 74vw;
+    z-index: 100;
+    margin-top: 2vh;
 }
 
 .containerForAnswers {

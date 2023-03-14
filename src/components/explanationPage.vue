@@ -89,7 +89,7 @@
                 event.currentTarget.classList.remove("beenThere");
                 event.currentTarget.classList.add("current");
             }, 
-            showInstruction(event) {
+            showInstruction() {
                 if (this.help === "hide") {
                     this.help = "show";
                 } else {
@@ -143,6 +143,15 @@
   src: url("C:/Users/USER/Documents/projects/לומדת טכניקת מסירה/src/assets/Heebo/Heebo-VariableFont_wght.ttf");
 }
 
+#videoSummary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    bottom: 4vh;
+}
+
 #explanationPage {
   font-family: "heebo";
   user-select: none;
@@ -181,10 +190,13 @@
     background-image: url("@/assets/images/answerButton.png");
 }
 .buttonContainer {
-    height: 24vh;
-    position: relative;
-    bottom: 4vh;
-    width: 110vw;
+    height: 22vh;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: space-evenly;
+
 }
 
 #help {
@@ -240,11 +252,8 @@
 .board {
     background-image: url("@/assets/images/board.png");
     background-size: 100% 100%;
-    position: relative;
-    bottom: 7vh;
-    left: 1vw;
     width: 108vw;
-    height: 53vh;
+    height: 52vh;
 }
 
 .buttons {
@@ -255,17 +264,16 @@
     font-size: 4.5vw;
     background-color: transparent;
     border-style: none;
-    position: relative;
     color: white;
-    left: 4vw;
     font-family: "heebo";
 }
 
 #text {
-    padding-top: 4.3vh;
+    padding-top: 4.1vh;
     padding-left: 4.4vh;
     font-size: 4.75vw;
     direction: rtl;
     width: 85vw;
 }
+
 </style>

@@ -45,8 +45,8 @@ export default {
   border-style: none;
   background-color: transparent;
   font-size: 5.5vw;
-  position: relative;
-  top: 27vh;
+  position: fixed;
+  bottom: 8vh;
   background-image: url("@/assets/images/continueButton.png");
   background-size: 100% 100%;
   font-family: "heebo";
