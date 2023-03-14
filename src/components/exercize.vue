@@ -12,12 +12,13 @@ export default {
     },
     components: { Character, Questions, endScreen }, 
     methods: {
-        nextQuestion() {
+        showQuestion(changed) {
+            if (changed === true) {
+                this.visibleQuestion = false;
+            } else {
+                this.visibleQuestion = true;
+            }
             this.questionCounter++;
-            this.visibleQuestion = false;
-        }, 
-        showQuestion() {
-            this.visibleQuestion = true;
         }
     }
 };
@@ -31,7 +32,7 @@ export default {
     <div id="exercize">
         <endScreen v-if="questionCounter === 12"></endScreen>
         <div v-else>
-            <Questions @level="nextQuestion" :questionCounter="questionCounter" v-show="visibleQuestion"></Questions>
+            <Questions @level="showQuestion" :questionCounter="questionCounter" v-show="visibleQuestion"></Questions>
             <Character :questionCounter="questionCounter" id="character" @update="showQuestion" v-show="visibleQuestion === false"></Character>
         </div>
     </div>

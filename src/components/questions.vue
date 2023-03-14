@@ -111,6 +111,7 @@ export default {
                     correctAnswers: ["בקיאות"]
                 }
             ],
+            changingCharacter: [true, true, false, true, false, false, true, false, true, false, false, true],
             chosenOptions: "",
             multipleChosenOptions: [], 
             correctAnswersArray: "",
@@ -129,7 +130,7 @@ export default {
             this.multipleChosenOptions = [];
 
             this.chosenOptions = "";
-            this.$emit("level");
+            this.$emit("level", this.changingCharacter[Number(this.questionCounter)]);
         }, 
         checkAnswer() {
             this.correctAnswersChecked = 0;

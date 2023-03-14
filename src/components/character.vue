@@ -5,39 +5,52 @@ export default {
         return {
             characterImages: [
                 {
-                    level0: "src/assets/images/soldier1Glow.png",
-                    sayingBubble: "אוי, אני לא יודעת מה להגיד להם",
-                    changes: true
-                }, 
-                {
-                    level1: "src/assets/images/soldier1Glow.png"
+                    level0: "/soldier1Glow.png",
+                    sayingBubble: ""
                 },
                 {
-                    level2: "src/assets/images/soldier1Glow.png"
-                }, 
-                {
-                    level3: "./@/assets/images/soldier2Glow.png"
+                    level1: "/soldier1Glow.png",
+                    sayingBubble: "*לוחשת*"
                 },
                 {
-                    level4: "./@/assets/images/soldier2Glow.png"
+                    level2: "/soldier1Glow.png",
+                    sayingBubble: ""
                 }, 
                 {
-                    level6: "./@/assets/images/soldier3Glow.png"
-                }, 
-                {
-                    level7: "./@/assets/images/soldier3Glow.png"
+                    level3: "/soldier2Glow.png", 
+                    sayingBubble: "אממ"
                 },
                 {
-                    level8: "./@/assets/images/soldier3Glow.png"
+                    level4: "/soldier2Glow.png",
+                    sayingBubble: ""
                 }, 
                 {
-                    level9: "./@/assets/images/soldier4Glow.png"
+                    level5: "/soldier2Glow.png",
+                    sayingBubble: ""
+                },
+                {
+                    level6: "/soldier3Glow.png",
+                    sayingBubble: "אממ"
                 }, 
                 {
-                    level10: "./@/assets/images/soldier4Glow.png"
+                    level7: "/soldier3Glow.png",
+                    sayingBubble: ""
+                },
+                {
+                    level8: "/soldier4Glow.png",
+                    sayingBubble: "היום נעבור שיעור על טכניקות מסירה"
                 }, 
                 {
-                    level11: "./@/assets/images/soldier4Glow.png"
+                    level9: "/soldier4Glow.png",
+                    sayingBubble: ""
+                }, 
+                {
+                    level10: "/soldier5Glow.png",
+                    sayingBubble: ""
+                },
+                {
+                    level11: "/soldier5Glow.png",
+                    sayingBubble: "*בבטחון* נעבור הנושאים הבאים"
                 }
             ],
             dontPressCharacter: false
@@ -45,12 +58,10 @@ export default {
     }, 
     computed: {
         currentCharacter() {
-            console.log(this.characterImages[this.questionCounter][`level${this.questionCounter}`])
             return (
-                // `level${this.questionCounter}`
                 this.characterImages[this.questionCounter][`level${this.questionCounter}`]
             ); 
-        }
+        }        
     }, 
     methods: {
         updateQuestion() {
@@ -71,67 +82,14 @@ export default {
 
 <template>
     <div id="character">
-        <!-- <div id="soldier" @click="updateQuestion" :disabled="dontPressCharacter" :class="currentCharacter"></div> -->
         <img :src="currentCharacter" alt="soldier" id="soldier" @click="updateQuestion" :disabled="dontPressCharacter"/>
+        <div id="speakingBubble">{{ this.characterImages[this.questionCounter]["sayingBubble"] }}</div>
     </div>
 </template>
 
 
 
 <style scoped>
-.level0 {
-    background-image: url("@/assets/images/soldier1Glow.png");
-}
-
-.level1 {
-    background-image: url("@/assets/images/soldier1Glow.png");
-}
-
-.level2 {
-    background-image: url("@/assets/images/soldier1Glow.png");
-}
-
-.level3 {
-    background-image: url("@/assets/images/soldier2Glow.png");
-}
-
-.level4 {
-    background-image: url("@/assets/images/soldier2Glow.png");
-}
-
-.level5 {
-    background-image: url("@/assets/images/soldier2Glow.png");
-}
-
-.level6 {
-    background-image: url("./@/assets/images/soldier3Glow.png");
-}
-
-.level7 {
-    background-image: url("@/assets/images/soldier3Glow.png");
-}
-
-.level8 {
-    background-image: url("@/assets/images/soldier3Glow.png");
-}
-
-.level9 {
-    background-image: url("@/assets/images/soldier4Glow.png");
-}
-
-.level9 {
-    background-image: url("@/assets/images/soldier4Glow.png");
-}
-
-.level10 {
-    background-image: url("@/assets/images/soldier4Glow.png");
-}
-
-.level11 {
-    background-image: url("@/assets/images/soldier4Glow.png");
-}
-
-
 #character {
     display: flex;
     flex-direction: column;
@@ -141,10 +99,15 @@ export default {
 }
 
 #soldier {
-    background-size: 100% 100%;
-    width: 60vw;
     position: relative;
     top: 15vh;
     height: 75vh;
+}
+
+#speakingBubble {
+    width: 10vw;
+    position: relative;
+    bottom: 58vh;
+    right: 9vw;
 }
 </style>
