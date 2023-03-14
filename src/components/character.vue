@@ -59,9 +59,10 @@ export default {
     computed: {
         currentCharacter() {
             return (
-                this.characterImages[this.questionCounter][`level${this.questionCounter}`]
+                `level${this.questionCounter}`
+                // this.characterImages[this.questionCounter][`level${this.questionCounter}`]
             ); 
-        }        
+        }
     }, 
     methods: {
         updateQuestion() {
@@ -82,14 +83,63 @@ export default {
 
 <template>
     <div id="character">
-        <img :src="currentCharacter" alt="soldier" id="soldier" @click="updateQuestion" :disabled="dontPressCharacter"/>
-        <div id="speakingBubble">{{ this.characterImages[this.questionCounter]["sayingBubble"] }}</div>
+        <div id="soldier" @click="updateQuestion" :disabled="dontPressCharacter" :class="currentCharacter"></div>
+        <!-- <img :src="currentCharacter" alt="soldier" id="soldier" @click="updateQuestion" :disabled="dontPressCharacter"/> -->
     </div>
 </template>
 
 
 
 <style scoped>
+.level0 {
+    background-image: url("/soldier1Glow.png");
+}
+
+.level1 {
+    background-image: url("/soldier1Glow.png");
+}
+
+.level2 {
+    background-image: url("/soldier1Glow.png");
+}
+
+.level3 {
+    background-image: url("/soldier2Glow.png");
+}
+
+.level4 {
+    background-image: url("/soldier2Glow.png");
+}
+
+.level5 {
+    background-image: url("/soldier2Glow.png");
+}
+
+.level6 {
+    background-image: url("/soldier3Glow.png");
+}
+
+.level7 {
+    background-image: url("/soldier3Glow.png");
+}
+
+.level8 {
+    background-image: url("/soldier4Glow.png");
+}
+
+.level9 {
+    background-image: url("/soldier4Glow.png");
+}
+
+.level10 {
+    background-image: url("/soldier5Glow.png");
+}
+
+.level11 {
+    background-image: url("/soldier5Glow.png");
+}
+
+
 #character {
     display: flex;
     flex-direction: column;
@@ -99,15 +149,10 @@ export default {
 }
 
 #soldier {
+    background-size: 100% 100%;
+    width: 60vw;
     position: relative;
     top: 15vh;
     height: 75vh;
-}
-
-#speakingBubble {
-    width: 10vw;
-    position: relative;
-    bottom: 58vh;
-    right: 9vw;
 }
 </style>

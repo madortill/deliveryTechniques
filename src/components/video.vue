@@ -51,8 +51,8 @@ export default {
 }
 
 .playAnimation {
-  animation: smaller 1s 1s ease-out forwards;
-  -webkit-animation: smaller 1s 1s ease-out forwards;
+  animation: smaller 1s ease-out forwards;
+  -webkit-animation: smaller 1s ease-out forwards;
 }
 
 #toExplanation {
