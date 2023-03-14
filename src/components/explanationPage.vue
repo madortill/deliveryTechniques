@@ -248,7 +248,7 @@
 }
 
 .buttons {
-    width: 31vw;
+    width: 32vw;
     height: 6vh;
     margin: 1vw;
     background-size: 100% 100%;
