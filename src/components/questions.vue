@@ -312,7 +312,7 @@ export default {
     background-image: url("@/assets/images/board.png");
     background-size: 100% 100%;
     width: 100vw;
-    height: 38vh;
+    height: 37vh;
     display: flex;
     flex-direction: column;
     align-items: center;

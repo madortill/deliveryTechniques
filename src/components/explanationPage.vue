@@ -258,8 +258,8 @@
 
 .buttons {
     width: 32vw;
-    height: 6vh;
-    margin: 1vw;
+    height: 7vh;
+    margin-left: 1vw;
     background-size: 100% 100%;
     font-size: 4.5vw;
     background-color: transparent;
