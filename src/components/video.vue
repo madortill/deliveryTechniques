@@ -20,7 +20,7 @@ export default {
 <template>
   <div id="video">
     <div v-if="nextPage === 'video'" class="container">
-      <div class="board">
+      <div class="board playAnimation">
         <iframe src="https://www.youtube.com/embed/kRIV8_lgpfU" title="YouTube video player" frameborder="0" class="speakingVideo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <button id="toExplanation" @click="nextPage = 'explain'">לתקציר</button>
@@ -36,6 +36,23 @@ export default {
   height: 35vh;
   padding-top: 4vh;
   padding-bottom: 7vh;
+}
+
+@keyframes smaller {
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@-webkit-keyframes smaller {
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.playAnimation {
+  animation: smaller 1s 1s ease-out forwards;
+  -webkit-animation: smaller 1s 1s ease-out forwards;
 }
 
 #toExplanation {
@@ -66,6 +83,7 @@ export default {
   background-size: 100% 100%;
   display: flex;
   width: 107vw;
+  transform: scale(1.15, 1.15);
   justify-content: center;
 }
 </style> 

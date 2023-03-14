@@ -116,7 +116,7 @@
                 <div class="buttonContainer">
                     <button type="button" class="buttons answers" v-for="info in texts" :key="info.buttonName + ' btn'" @click="recognizeButton">{{ info.buttonName }}</button>
                 </div>
-                <div class="board">
+                <div class="board playAnimation">
                     <div v-for="info in texts" :key="info.buttonName + ' text'" v-show="chosenButton === info.buttonName" id="text">
                         <div v-show="info.extra1">
                             {{ info.extra1 }}
@@ -149,7 +149,7 @@
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    bottom: 4vh;
+    bottom: 3.5vh;
 }
 
 #explanationPage {
@@ -196,7 +196,6 @@
     width: 100vw;
     flex-direction: column;
     justify-content: space-evenly;
-
 }
 
 #help {
@@ -254,6 +253,25 @@
     background-size: 100% 100%;
     width: 108vw;
     height: 52vh;
+    position: relative;
+    bottom: 30vh;
+}
+
+.playAnimation {
+  animation: lowerBoard 1s ease-out forwards;
+  -webkit-animation: lowerBoard 1s ease-out forwards;
+}
+
+@keyframes lowerBoard {
+  100% {
+    bottom: 0vh;
+  }
+}
+
+@-webkit-keyframes lowerBoard {
+  100% {
+    bottom: 0vh;
+  }
 }
 
 .buttons {

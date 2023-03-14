@@ -22,8 +22,8 @@ export default {
     <div class="openingPage" v-if="page==='start'">
       <img src="@/assets/images/odot2.svg" alt="odot" id="icon" @click="page='odot'" />
       <div class="boardAndButton">
-        <div class="container playAnimation" id="board">
-          <div id="openingTitle" class="playAnimationOnText">
+        <div class="container" id="board">
+          <div id="openingTitle">
           טכניקות מסירה
           </div>
           <div class="intoduction">
@@ -63,16 +63,6 @@ body {
   overflow: hidden;
 }
 
-.playAnimation {
-  animation: biggerBoard 1s 1s linear forwards;
-  -webkit-animation: biggerBoard 1s 1s linear forwards;
-}
-
-.playAnimationOnText {
-  animation: smallerText 1s 1s linear forwards;
-  -webkit-animation: smallerText 1s 1s linear forwards;
-}
-
 .boardAndButton {
   display: flex;
   flex-direction: column;
@@ -84,6 +74,7 @@ body {
 .container {
   background-image: url("@/assets/images/board.png");
   background-size: 100% 100%;
+  transform: scale(1.15, 1.15);
   background-repeat: no-repeat;
   height: 45vh;
   width: 100vw;
@@ -94,7 +85,7 @@ body {
 
 #openingTitle {
   margin-top: 7vh;
-  font-size: 16vw;
+  font-size: 18vw;
   line-height: 9vh;
   text-align: center;
   direction: rtl;
@@ -151,37 +142,4 @@ body {
   top: 1vh;
 }
 
-@keyframes biggerBoard {
-  100% {
-    background-size: 150% 100%;
-  }
-}
-
-@-webkit-keyframes biggerBoard {
-  100% {
-    background-size: 150% 100%;
-  }
-}
-
-@keyframes smallerText {
-  0% {
-    width: 100vw;
-    font-size: 16vw;
-  }
-  100% {
-    width: 70vw;
-    font-size: 18vw;
-  }
-}
-
-@-webkit-keyframes smallerText {
-  0% {
-    width: 100vw;
-    font-size: 17vw;
-  }
-  100% {
-    width: 70vw;
-    font-size: 20vw;
-  }
-}
 </style>
