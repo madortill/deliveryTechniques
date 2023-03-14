@@ -30,10 +30,10 @@ export default {
                 },
                 {
                     question: "איזה טכניקת מסירה נפגעת בעת העברת השיעור של הרב, על פי התמונה?",
-                    src: "https://lh4.googleusercontent.com/Ezh_FXiYmVyAkwJ6SFS815F5caWhBdqXJT9MfIs1nIdpXcdokTCnRe2ymqn103botttD5Yu0ri4Sf8Wt1cHPZMQWf_TLnawpuGUj-khdZCbQxHuFxc2AO0uy_IcCvewUpg=w740",
                     answer1: "תנועת גוף", 
                     answer2: "הופעה", 
                     answer3: "תנועת ידיים",
+                    answer4: "קול דיבור",
                     correctAnswers: ["תנועת גוף"]
                 },
                 {
@@ -62,6 +62,7 @@ export default {
                     answer3: "רמת הקשב תרד",
                     answer4: "ימשוך את תשומת הלב התלמידים",
                     answer5: "לא עלול לקרות כלום",
+                    answer6: "ישדר חוסר בקיאות",
                     correctAnswers: ["החניכים לא יגלו עניין", "רמת הקשב תרד"]
                 },
                 {
@@ -71,6 +72,7 @@ export default {
                     answer3: "בקיאות",
                     answer4: "קשר עין",
                     answer5: "הופעה", 
+                    answer6: "תנועות ידיים",
                     correctAnswers: ["קול דיבור"]
                 },
                 {
@@ -80,6 +82,7 @@ export default {
                     answer3: "בקיאות",
                     answer4: "קשר עין",
                     answer5: "הופעה",
+                    answer6: "תנועות ידיים",
                     correctAnswers: ["תנועות גוף"]
                 },
                 {
@@ -89,6 +92,7 @@ export default {
                     answer3: "בקיאות",
                     answer4: "קשר עין",
                     answer5: "הופעה",
+                    answer6: "תנועות ידיים",
                     correctAnswers: ["הופעה"]
 
                 },
@@ -99,6 +103,7 @@ export default {
                     answer3: "בקיאות",
                     answer4: "קשר עין",
                     answer5: "הופעה",
+                    answer6: "תנועות ידיים",
                     correctAnswers: ["קשר עין"]
                 },
                 {
@@ -108,6 +113,7 @@ export default {
                     answer3: "בקיאות",
                     answer4: "קשר עין",
                     answer5: "הופעה", 
+                    answer6: "תנועות ידיים",
                     correctAnswers: ["בקיאות"]
                 }
             ],
