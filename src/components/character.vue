@@ -5,15 +5,15 @@ export default {
         return {
             characterImages: [
                 {
-                    level0: "/soldier1Glow.png",
+                    level0: "/public/soldier1Glow.png",
                     sayingBubble: ""
                 },
                 {
-                    level1: "/soldier1Glow.png",
+                    level1: "/public/soldier1Glow.png",
                     sayingBubble: "*לוחשת*"
                 },
                 {
-                    level2: "/soldier1Glow.png",
+                    level2: "/public/soldier1Glow.png",
                     sayingBubble: ""
                 }, 
                 {
