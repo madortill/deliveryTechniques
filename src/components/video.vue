@@ -9,7 +9,6 @@ export default {
   },
   methods: {
     showPage() {
-      console.log("hi");
       this.nextPage = 'video';
     }
   },

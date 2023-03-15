@@ -69,7 +69,6 @@ export default {
             this.dontPressCharacter = true;
 
             let newPicture = this.characterImages[this.questionCounter][`level${this.questionCounter}`].slice(0, -8);
-            console.log(newPicture);
             this.characterImages[this.questionCounter][`level${this.questionCounter}`] = `${newPicture}.png`;
 
             let timer = setTimeout (() => {

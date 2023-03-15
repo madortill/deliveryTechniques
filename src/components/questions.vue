@@ -130,9 +130,6 @@ export default {
     },
     methods: {
         updateQuestion() {
-            this.ableToCheck = true;
-            this.ableToPress = false; 
-
             this.multipleChosenOptions = [];
 
             this.chosenOptions = "";
@@ -173,6 +170,7 @@ export default {
 
                             this.ableToPress = false;                            
                             this.multipleChosenOptions.splice(i,1);
+                            this.ableToCheck = true;
                         }
                     }
                 }, 1000); 
