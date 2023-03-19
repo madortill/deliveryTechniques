@@ -6,40 +6,40 @@ export default {
             isGlow: true,
             characterImages: [
                 {
+                    sayingBubble: "..."
+                },
+                {
+                    sayingBubble: "מה לומר להם?"
+                },
+                {
+                    sayingBubble: ""
+                }, 
+                {
+                    sayingBubble: "..."
+                },
+                {
+                    sayingBubble: ""
+                }, 
+                {
                     sayingBubble: ""
                 },
                 {
                     sayingBubble: "*לוחשת*"
-                },
-                {
-                    sayingBubble: ""
                 }, 
                 {
                     sayingBubble: ""
                 },
                 {
-                    sayingBubble: "אממ"
+                    sayingBubble: "!היום נעבור שיעור על טכניקות מסירה"
                 }, 
                 {
                     sayingBubble: ""
+                }, 
+                {
+                    sayingBubble: "נעבור על הנושאים הבאים"
                 },
                 {
                     sayingBubble: ""
-                }, 
-                {
-                    sayingBubble: "אממ"
-                },
-                {
-                    sayingBubble: ""
-                }, 
-                {
-                    sayingBubble: "היום נעבור שיעור על טכניקות מסירה"
-                }, 
-                {
-                    sayingBubble: ""
-                },
-                {
-                    sayingBubble: "*בבטחון* נעבור הנושאים הבאים"
                 }
             ],
             dontPressCharacter: false
@@ -128,7 +128,7 @@ export default {
 
 .level8Glow {
     background-image: url("/soldier4Glow.png");
-    width: 57vw;
+    width: 67vw;
 }
 
 .level9Glow {
@@ -188,7 +188,7 @@ export default {
 
 .level8 {
     background-image: url("/soldier4.png");
-    width: 57vw;
+    width: 67vw;
 }
 
 .level9 {
@@ -216,7 +216,6 @@ export default {
 
 #soldier {
     background-size: 100% 100%;
-    /* width: 57vw; */
     position: relative;
     top: 15vh;
     height: 75vh;

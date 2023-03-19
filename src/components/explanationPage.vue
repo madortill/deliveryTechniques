@@ -252,7 +252,7 @@
     background-image: url("@/assets/images/board.png");
     background-size: 100% 100%;
     width: 108vw;
-    height: 52vh;
+    height: 52.3vh;
     position: relative;
     bottom: 30vh;
 }
