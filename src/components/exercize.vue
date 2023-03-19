@@ -17,8 +17,8 @@ export default {
                 this.visibleQuestion = false;
             } else {
                 this.visibleQuestion = true;
+                this.questionCounter++;
             }
-            this.questionCounter++;
         }
     }
 };

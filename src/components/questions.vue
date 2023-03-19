@@ -117,7 +117,7 @@ export default {
                     correctAnswers: ["בקיאות"]
                 }
             ],
-            changingCharacter: [true, true, false, true, false, false, true, false, true, false, false, true],
+            changingCharacter: [true, true, false, true, false, false, true, false, true, false, true, false],
             chosenOptions: "",
             multipleChosenOptions: [], 
             correctAnswersArray: "",

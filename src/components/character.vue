@@ -15,12 +15,6 @@ export default {
                     sayingBubble: ""
                 }, 
                 {
-                    sayingBubble: "אממ"
-                },
-                {
-                    sayingBubble: ""
-                }, 
-                {
                     sayingBubble: ""
                 },
                 {
@@ -29,11 +23,17 @@ export default {
                 {
                     sayingBubble: ""
                 },
+                {
+                    sayingBubble: ""
+                }, 
+                {
+                    sayingBubble: "אממ"
+                },
+                {
+                    sayingBubble: ""
+                }, 
                 {
                     sayingBubble: "היום נעבור שיעור על טכניקות מסירה"
-                }, 
-                {
-                    sayingBubble: ""
                 }, 
                 {
                     sayingBubble: ""
@@ -46,13 +46,8 @@ export default {
         }
     }, 
     computed: {
-        currentCharacter(isGlow) {
-            // if (isGlow) {
-                return (`level${this.questionCounter}Glow`); 
-            // } 
-            // else {
-            //     return (`level${this.questionCounter}`); 
-            // }
+        currentCharacter() {
+            return (`level${this.questionCounter}Glow`); 
         },
         toggleGlow() {
             return (`level${this.questionCounter}`); 
@@ -61,130 +56,154 @@ export default {
     methods: {
         updateQuestion() {
             this.dontPressCharacter = true;
-
-            // let newPicture = this.characterImages[this.questionCounter][`level${this.questionCounter}`].slice(1, -8);
-            // console.log(newPicture);
-            // console.log(this.$refs.soldier);
-            // this.$refs.soldier.backgroundImage = `url("/public/${newPicture}.png")`;
-            // console.log(this.$refs.soldier.backgroundImage);
-            // this.characterImages[this.questionCounter][`level${this.questionCounter}`] = `${newPicture}.png`;
-
             this.isGlow = false;
             
             let timer = setTimeout (() => {
+                this.isGlow = true;
                 this.$emit("update");
             }, 1000);
         }
     }
 };
-
 </script>
 
 
 <template>
     <div id="character">
         <div id="soldier" @click="updateQuestion" :disabled="dontPressCharacter" :class="isGlow ? currentCharacter : toggleGlow"></div>
-        <!-- <img :src="currentCharacter" alt="soldier" id="soldier" @click="updateQuestion" :disabled="dontPressCharacter"/> -->
+        <div class="bubble">{{ characterImages[questionCounter]["sayingBubble"] }}</div>
     </div>
 </template>
 
 
-
 <style scoped>
+.bubble {
+    position: absolute;
+    top: 18vh;
+    left: 18vw;
+    width: 40vw;
+    font-size: 4.5vw;
+    text-align: center;
+    direction: rtl;
+}
 .level0Glow {
     background-image: url("/soldier1Glow.png");
+    width: 57vw;
 }
 
 .level1Glow {
     background-image: url("/soldier1Glow.png");
+    width: 57vw;
 }
 
 .level2Glow {
     background-image: url("/soldier1Glow.png");
+    width: 57vw;
 }
 
 .level3Glow {
     background-image: url("/soldier2Glow.png");
+    width: 57vw;
 }
 
 .level4Glow {
     background-image: url("/soldier2Glow.png");
+    width: 57vw;
 }
 
 .level5Glow {
     background-image: url("/soldier2Glow.png");
+    width: 57vw;
 }
 
 .level6Glow {
     background-image: url("/soldier3Glow.png");
+    width: 57vw;
 }
 
 .level7Glow {
     background-image: url("/soldier3Glow.png");
+    width: 57vw;
 }
 
 .level8Glow {
     background-image: url("/soldier4Glow.png");
+    width: 57vw;
 }
 
 .level9Glow {
     background-image: url("/soldier4Glow.png");
+    width: 67vw;
 }
 
 .level10Glow {
     background-image: url("/soldier5Glow.png");
+    width: 67vw;
 }
 
 .level11Glow {
     background-image: url("/soldier5Glow.png");
+    width: 67vw;
 }
 
 .level0 {
     background-image: url("/soldier1.png");
+    width: 57vw;
 }
 
 .level1 {
     background-image: url("/soldier1.png");
+    width: 57vw;
 }
 
 .level2 {
     background-image: url("/soldier1.png");
+    width: 57vw;
 }
 
 .level3 {
     background-image: url("/soldier2.png");
+    width: 57vw;
 }
 
 .level4 {
     background-image: url("/soldier2.png");
+    width: 57vw;
 }
 
 .level5 {
     background-image: url("/soldier2.png");
+    width: 57vw;
 }
 
 .level6 {
     background-image: url("/soldier3.png");
+    width: 57vw;
 }
 
 .level7 {
     background-image: url("/soldier3.png");
+    width: 57vw;
 }
 
 .level8 {
     background-image: url("/soldier4.png");
+    width: 57vw;
 }
 
 .level9 {
     background-image: url("/soldier4.png");
+    width: 67vw;
 }
 
 .level10 {
     background-image: url("/soldier5.png");
+    width: 67vw;
 }
 
 .level11 {
     background-image: url("/soldier5.png");
+    width: 67vw;
 }
 
 #character {
@@ -197,7 +216,7 @@ export default {
 
 #soldier {
     background-size: 100% 100%;
-    width: 57vw;
+    /* width: 57vw; */
     position: relative;
     top: 15vh;
     height: 75vh;
