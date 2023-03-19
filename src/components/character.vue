@@ -47,11 +47,15 @@ export default {
     }, 
     computed: {
         currentCharacter(isGlow) {
-            if (isGlow) {
+            // if (isGlow) {
                 return (`level${this.questionCounter}Glow`); 
-            } else {
-                return (`level${this.questionCounter}`); 
-            }
+            // } 
+            // else {
+            //     return (`level${this.questionCounter}`); 
+            // }
+        },
+        toggleGlow() {
+            return (`level${this.questionCounter}`); 
         }
     }, 
     methods: {
@@ -79,7 +83,7 @@ export default {
 
 <template>
     <div id="character">
-        <div id="soldier" @click="updateQuestion" :disabled="dontPressCharacter" :style="{'background-image': `url(/soldier1Glow.png)`}"></div>
+        <div id="soldier" @click="updateQuestion" :disabled="dontPressCharacter" :class="isGlow ? currentCharacter : toggleGlow"></div>
         <!-- <img :src="currentCharacter" alt="soldier" id="soldier" @click="updateQuestion" :disabled="dontPressCharacter"/> -->
     </div>
 </template>
