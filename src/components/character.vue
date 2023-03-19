@@ -3,53 +3,42 @@ export default {
     props: ["questionCounter"],
     data() {
         return {
+            isGlow: true,
             characterImages: [
                 {
-                    level0: "/soldier1Glow.png",
                     sayingBubble: ""
                 },
                 {
-                    level1: "/soldier1Glow.png",
                     sayingBubble: "*לוחשת*"
                 },
                 {
-                    level2: "/soldier1Glow.png",
                     sayingBubble: ""
                 }, 
                 {
-                    level3: "/soldier2Glow.png", 
                     sayingBubble: "אממ"
                 },
                 {
-                    level4: "/soldier2Glow.png",
                     sayingBubble: ""
                 }, 
                 {
-                    level5: "/soldier2Glow.png",
                     sayingBubble: ""
                 },
                 {
-                    level6: "/soldier3Glow.png",
                     sayingBubble: "אממ"
                 }, 
                 {
-                    level7: "/soldier3Glow.png",
                     sayingBubble: ""
                 },
                 {
-                    level8: "/soldier4Glow.png",
                     sayingBubble: "היום נעבור שיעור על טכניקות מסירה"
                 }, 
                 {
-                    level9: "/soldier4Glow.png",
                     sayingBubble: ""
                 }, 
                 {
-                    level10: "/soldier5Glow.png",
                     sayingBubble: ""
                 },
                 {
-                    level11: "/soldier5Glow.png",
                     sayingBubble: "*בבטחון* נעבור הנושאים הבאים"
                 }
             ],
@@ -57,20 +46,27 @@ export default {
         }
     }, 
     computed: {
-        currentCharacter() {
-            return (
-                `level${this.questionCounter}`
-                // this.characterImages[this.questionCounter][`level${this.questionCounter}`]
-            ); 
+        currentCharacter(isGlow) {
+            if (isGlow) {
+                return (`level${this.questionCounter}Glow`); 
+            } else {
+                return (`level${this.questionCounter}`); 
+            }
         }
     }, 
     methods: {
         updateQuestion() {
             this.dontPressCharacter = true;
 
-            let newPicture = this.characterImages[this.questionCounter][`level${this.questionCounter}`].slice(0, -8);
-            this.characterImages[this.questionCounter][`level${this.questionCounter}`] = `${newPicture}.png`;
+            // let newPicture = this.characterImages[this.questionCounter][`level${this.questionCounter}`].slice(1, -8);
+            // console.log(newPicture);
+            // console.log(this.$refs.soldier);
+            // this.$refs.soldier.backgroundImage = `url("/public/${newPicture}.png")`;
+            // console.log(this.$refs.soldier.backgroundImage);
+            // this.characterImages[this.questionCounter][`level${this.questionCounter}`] = `${newPicture}.png`;
 
+            this.isGlow = false;
+            
             let timer = setTimeout (() => {
                 this.$emit("update");
             }, 1000);
@@ -83,7 +79,7 @@ export default {
 
 <template>
     <div id="character">
-        <div id="soldier" @click="updateQuestion" :disabled="dontPressCharacter" :class="currentCharacter"></div>
+        <div id="soldier" @click="updateQuestion" :disabled="dontPressCharacter" :style="{'background-image': `url(/soldier1Glow.png)`}"></div>
         <!-- <img :src="currentCharacter" alt="soldier" id="soldier" @click="updateQuestion" :disabled="dontPressCharacter"/> -->
     </div>
 </template>
@@ -91,54 +87,101 @@ export default {
 
 
 <style scoped>
-.level0 {
+.level0Glow {
     background-image: url("/soldier1Glow.png");
+}
+
+.level1Glow {
+    background-image: url("/soldier1Glow.png");
+}
+
+.level2Glow {
+    background-image: url("/soldier1Glow.png");
+}
+
+.level3Glow {
+    background-image: url("/soldier2Glow.png");
+}
+
+.level4Glow {
+    background-image: url("/soldier2Glow.png");
+}
+
+.level5Glow {
+    background-image: url("/soldier2Glow.png");
+}
+
+.level6Glow {
+    background-image: url("/soldier3Glow.png");
+}
+
+.level7Glow {
+    background-image: url("/soldier3Glow.png");
+}
+
+.level8Glow {
+    background-image: url("/soldier4Glow.png");
+}
+
+.level9Glow {
+    background-image: url("/soldier4Glow.png");
+}
+
+.level10Glow {
+    background-image: url("/soldier5Glow.png");
+}
+
+.level11Glow {
+    background-image: url("/soldier5Glow.png");
+}
+
+.level0 {
+    background-image: url("/soldier1.png");
 }
 
 .level1 {
-    background-image: url("/soldier1Glow.png");
+    background-image: url("/soldier1.png");
 }
 
 .level2 {
-    background-image: url("/soldier1Glow.png");
+    background-image: url("/soldier1.png");
 }
 
 .level3 {
-    background-image: url("/soldier2Glow.png");
+    background-image: url("/soldier2.png");
 }
 
 .level4 {
-    background-image: url("/soldier2Glow.png");
+    background-image: url("/soldier2.png");
 }
 
 .level5 {
-    background-image: url("/soldier2Glow.png");
+    background-image: url("/soldier2.png");
 }
 
 .level6 {
-    background-image: url("/soldier3Glow.png");
+    background-image: url("/soldier3.png");
 }
 
 .level7 {
-    background-image: url("/soldier3Glow.png");
+    background-image: url("/soldier3.png");
 }
 
 .level8 {
-    background-image: url("/soldier4Glow.png");
+    background-image: url("/soldier4.png");
 }
 
 .level9 {
-    background-image: url("/soldier4Glow.png");
+    background-image: url("/soldier4.png");
 }
 
 .level10 {
-    background-image: url("/soldier5Glow.png");
+    background-image: url("/soldier5.png");
 }
 
 .level11 {
-    background-image: url("/soldier5Glow.png");
+    background-image: url("/soldier5.png");
 }
-
 
 #character {
     display: flex;

@@ -133,6 +133,10 @@ export default {
             this.multipleChosenOptions = [];
 
             this.chosenOptions = "";
+
+            this.ableToCheck = false;
+            this.ableToPress = false;
+
             this.$emit("level", this.changingCharacter[Number(this.questionCounter)]);
         }, 
         checkAnswer() {
@@ -168,7 +172,6 @@ export default {
                             this.multipleChosenOptions[i].classList.remove("incorrect");
                             this.multipleChosenOptions[i].classList.add("disabled");
 
-                            this.ableToPress = false;                            
                             this.multipleChosenOptions.splice(i,1);
                             this.ableToCheck = true;
                         }
@@ -183,21 +186,22 @@ export default {
 
             } else {
                 this.chosenOptions.classList.remove("picked");
+                this.ableToCheck = true;
+                this.ableToPress = true;
 
                 if (this.chosenOptions.innerText === this.correctAnswersArray[0]) {
-                    this.ableToCheck = true;
-                    this.ableToPress = true;
 
                     this.chosenOptions.classList.add("correct");
                     let timer = setTimeout(this.updateQuestion, 1200);
                 } else {
-                    this.ableToPress = true;
                     this.chosenOptions.classList.add("incorrect");
 
                     let AnotherTimer = setTimeout(() => {
                         this.chosenOptions.classList.remove("incorrect");
                         this.chosenOptions.classList.add("disabled");
+
                         this.ableToPress = false;
+                        this.chosenOptions.style.pointerEvents = "none";
                     }, 1000);
                 }
             }
