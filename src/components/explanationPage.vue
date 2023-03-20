@@ -110,7 +110,7 @@
 <template>
     <div id="explanationPage">
         <div class="summary" v-if="pressed === false">
-            <img src="@/assets/images/odot2.svg" alt="help" id="help" @click="showInstruction"/>
+            <img src="@/assets/images/help.png" alt="help" id="help" @click="showInstruction"/>
             <div id="instruction" ref="instruction" :class="help === 'hide' ? 'hidden' : 'show'">בלחיצה על טכניקת המסירה יופיע ההסבר המתאים</div>
             <div id="videoSummary">
                 <div class="buttonContainer">

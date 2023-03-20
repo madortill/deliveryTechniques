@@ -368,11 +368,11 @@ export default {
 }
 
 .correct {
-    background-image: url("@/assets/images/correctButton.svg");
+    background-image: url("@/assets/images/correct.png");
 }
 
 .incorrect {
-    background-image: url("@/assets/images/incorrectButton.svg");
+    background-image: url("@/assets/images/incorrect.png");
 }
 
 .picked {

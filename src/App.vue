@@ -10,6 +10,8 @@ export default {
   },
   methods: {
     insertedName() {
+      document.getElementById("beginLesson").classList.remove("disabled");
+      document.getElementById("beginLesson").classList.add("abled");
       document.getElementById("beginLesson").disabled = false;
     }
   },
@@ -31,7 +33,7 @@ export default {
             <input type="input" id="nameInput" placeholder="שם מלא" @input="insertedName" />
           </div>
         </div>
-        <button id="beginLesson" @click="page = 'video'" disabled="true">יאללה שנתחיל</button>
+        <button id="beginLesson" @click="page = 'video'" disabled="true" class="disabled">יאללה שנתחיל</button>
       </div>
     </div>
     <videoVue v-else-if="page==='video'"></videoVue>
@@ -96,6 +98,13 @@ body {
   margin-top: 2vh;
 }
 
+.abled {
+  background-image: url("src/assets/images/continueButton.png");
+}
+.disabled {
+  background-image: url("src/assets/images/disabledButton.png");
+}
+
 #beginLesson {
   width: 45vw;
   height: 10vh;
@@ -107,7 +116,7 @@ body {
   position: relative;
   top: 24.5vh;
   font-family: "heebo";
-  background-image: url("@/assets/images/continueButton.png");
+  /* background-image: url("@/assets/images/disabledButton.png"); */
   background-size: 100% 100%;
 }
 
