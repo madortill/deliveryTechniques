@@ -30,7 +30,7 @@ export default {
                     sayingBubble: ""
                 },
                 {
-                    sayingBubble: "!היום נעבור שיעור על טכניקות מסירה"
+                    sayingBubble: "היום נעבור שיעור על טכניקות מסירה!"
                 }, 
                 {
                     sayingBubble: ""
