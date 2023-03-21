@@ -99,10 +99,10 @@ body {
 }
 
 .abled {
-  background-image: url("src/assets/images/continueButton.png");
+  filter: grayscale(0%);
 }
 .disabled {
-  background-image: url("src/assets/images/disabledButton.png");
+  filter: grayscale(60%);
 }
 
 #beginLesson {
@@ -116,7 +116,7 @@ body {
   position: relative;
   top: 24.5vh;
   font-family: "heebo";
-  /* background-image: url("@/assets/images/disabledButton.png"); */
+  background-image: url("@/assets/images/continueButton.png");
   background-size: 100% 100%;
 }
 

@@ -165,6 +165,7 @@ export default {
                 let AnotherTimer = setTimeout(() => {
                     for (let i = this.multipleChosenOptions.length - 1; i >= 0; i--) {
                         
+                        this.ableToPress = false;
                         this.multipleChosenOptions[i].disabled = true;
 
                         if (this.multipleChosenOptions[i].classList.contains("incorrect")) {
@@ -185,7 +186,9 @@ export default {
                 }
 
             } else {
-                this.chosenOptions.classList.remove("picked");
+                if (this.chosenOptions !== undefined) {
+                    this.chosenOptions.classList.remove("picked");
+                }
                 this.ableToCheck = true;
                 this.ableToPress = true;
 
@@ -372,7 +375,7 @@ export default {
 }
 
 .incorrect {
-    background-image: url("@/assets/images/incorrect.png");
+    background-image: url("@/assets/images/incorrectButton.svg");
 }
 
 .picked {

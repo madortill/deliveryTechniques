@@ -65,7 +65,7 @@
                         line2: "חוסר תשומת לב החניכים",
                         line3: "קשיים בהעברת החומר בצורה מעניינת - מגיעה בשאר טכניקות המסירה",
                         line4: "לימוד טעויות!",
-                        extra2: `לכן נאמר כי טכניקת הבקיאות היא "אם כל הטכניקות"`
+                        extra2: `לכן נאמר כי טכניקת הבקיאות היא "אם כל הטכניקות".`
                     },
                 ]
             }
@@ -118,7 +118,7 @@
                 </div>
                 <div class="board playAnimation">
                     <div v-for="info in texts" :key="info.buttonName + ' text'" v-show="chosenButton === info.buttonName" id="text">
-                        <div v-show="info.extra1">
+                        <div v-show="info.extra1" :class="info.extra1 !== '' ? 'block' : 'none'">
                             {{ info.extra1 }}
                         </div>
                         <ul>
@@ -126,7 +126,7 @@
                                 {{ content }}
                             </li>
                         </ul>
-                        <div v-show="info.extra2">{{ info.extra2 }}</div>
+                        <div v-show="info.extra2" :class="info.extra2 !== '' ? 'block' : 'none' ">{{ info.extra2 }}</div>
                     </div>
                 </div>
             </div>
@@ -168,6 +168,14 @@
     padding-top: 1vh;
     padding-bottom: 1vh;
     top: 2vh;
+}
+
+.none {
+    display: none;
+}
+
+.block {
+    display: block;
 }
 
 .hidden {
