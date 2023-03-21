@@ -70,7 +70,7 @@ export default {
 
 <template>
     <div id="character">
-        <div id="soldier" @click="updateQuestion" :disabled="dontPressCharacter" :class="isGlow ? currentCharacter : toggleGlow"></div>
+        <div ref="soldier" class="soldierGlow" @click="updateQuestion" :disabled="dontPressCharacter" :class="isGlow ? [currentCharacter, 'soldierGlow'] : [toggleGlow, 'soldier']"></div>
         <div class="bubble">{{ characterImages[questionCounter]["sayingBubble"] }}</div>
     </div>
 </template>
@@ -79,131 +79,108 @@ export default {
 <style scoped>
 .bubble {
     position: absolute;
-    top: 18vh;
-    left: 18vw;
+    top: 21vh;
+    left: 24vw;
     width: 40vw;
     font-size: 4.5vw;
     text-align: center;
     direction: rtl;
 }
 .level0Glow {
-    background-image: url("/soldier1Glow.png");
-    width: 57vw;
+    background-image: url("/soldier1Glow.svg");
 }
 
 .level1Glow {
-    background-image: url("/soldier1Glow.png");
-    width: 57vw;
+    background-image: url("/soldier1Glow.svg");
 }
 
 .level2Glow {
-    background-image: url("/soldier1Glow.png");
-    width: 57vw;
+    background-image: url("/soldier1Glow.svg");
 }
 
 .level3Glow {
-    background-image: url("/soldier2Glow.png");
-    width: 57vw;
+    background-image: url("/soldier2Glow.svg");
 }
 
 .level4Glow {
-    background-image: url("/soldier2Glow.png");
-    width: 57vw;
+    background-image: url("/soldier2Glow.svg");
 }
 
 .level5Glow {
-    background-image: url("/soldier2Glow.png");
-    width: 57vw;
+    background-image: url("/soldier2Glow.svg");
 }
 
 .level6Glow {
-    background-image: url("/soldier3Glow.png");
-    width: 57vw;
+    background-image: url("/soldier3Glow.svg");
 }
 
 .level7Glow {
-    background-image: url("/soldier3Glow.png");
-    width: 57vw;
+    background-image: url("/soldier3Glow.svg");
 }
 
 .level8Glow {
-    background-image: url("/soldier4Glow.png");
-    width: 67vw;
+    background-image: url("/soldier4Glow.svg");
 }
 
 .level9Glow {
-    background-image: url("/soldier4Glow.png");
-    width: 67vw;
+    background-image: url("/soldier4Glow.svg");
 }
 
 .level10Glow {
-    background-image: url("/soldier5Glow.png");
-    width: 67vw;
+    background-image: url("/soldier5Glow.svg");
 }
 
 .level11Glow {
-    background-image: url("/soldier5Glow.png");
-    width: 67vw;
+    background-image: url("/soldier5Glow.svg");
 }
 
 .level0 {
-    background-image: url("/soldier1.png");
-    width: 57vw;
+    background-image: url("/soldier1.svg");
 }
 
 .level1 {
-    background-image: url("/soldier1.png");
-    width: 57vw;
+    background-image: url("/soldier1.svg");
 }
 
 .level2 {
-    background-image: url("/soldier1.png");
-    width: 57vw;
+    background-image: url("/soldier1.svg");
 }
 
 .level3 {
-    background-image: url("/soldier2.png");
-    width: 57vw;
+    background-image: url("/soldier2.svg");
 }
 
 .level4 {
-    background-image: url("/soldier2.png");
-    width: 57vw;
+    background-image: url("/soldier2.svg");
 }
 
 .level5 {
-    background-image: url("/soldier2.png");
-    width: 57vw;
+    background-image: url("/soldier2.svg");
 }
 
 .level6 {
-    background-image: url("/soldier3.png");
-    width: 57vw;
+    background-image: url("/soldier3.svg");
 }
 
 .level7 {
-    background-image: url("/soldier3.png");
+    background-image: url("/soldier3.svg");
     width: 57vw;
 }
 
 .level8 {
-    background-image: url("/soldier4.png");
-    width: 67vw;
+    background-image: url("/soldier4.svg");
 }
 
 .level9 {
-    background-image: url("/soldier4.png");
-    width: 67vw;
+    background-image: url("/soldier4.svg");
 }
 
 .level10 {
-    background-image: url("/soldier5.png");
-    width: 67vw;
+    background-image: url("/soldier5.svg");
 }
 
 .level11 {
-    background-image: url("/soldier5.png");
-    width: 67vw;
+    background-image: url("/soldier5.svg");
 }
 
 #character {
@@ -214,10 +191,21 @@ export default {
     align-items: center;
 }
 
-#soldier {
+.soldierGlow {
+    background-size: 120% 117%;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 7vh;
+    width: 100vw;
+    height: 600vh;
+}
+
+.soldier {
     background-size: 100% 100%;
+    background-repeat: no-repeat;
     position: relative;
     top: 15vh;
-    height: 75vh;
+    width: 53vw;
+    height: 77vh;
 }
 </style>

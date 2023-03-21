@@ -164,8 +164,9 @@ export default {
 
                 let AnotherTimer = setTimeout(() => {
                     for (let i = this.multipleChosenOptions.length - 1; i >= 0; i--) {
-                        
+                        this.ableToCheck = false;
                         this.ableToPress = false;
+
                         this.multipleChosenOptions[i].disabled = true;
 
                         if (this.multipleChosenOptions[i].classList.contains("incorrect")) {
