@@ -225,10 +225,10 @@
 }
 
 #nextPage {
-    font-size: 3vmax;
+    font-size: 2.5vmax;
     padding-bottom: 1vh;
     width: 42vw;
-    height: 7vh;
+    height: 7.5vh;
     font-family: "heebo";
     position: fixed;
     bottom: 8vh;
@@ -241,10 +241,10 @@
 }
 
 #prevPage {
-    font-size: 3vmax;
+    font-size: 2.5vmax;
     padding-bottom: 1vh;
     width: 42vw;
-    height: 7vh;
+    height: 7.5vh;
     font-family: "heebo";
     position: fixed;
     bottom: 8vh;
