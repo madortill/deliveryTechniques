@@ -63,6 +63,7 @@ body {
   font-family: "heebo";
   user-select: none;
   overflow: hidden;
+  position: fixed;
 }
 
 .boardAndButton {

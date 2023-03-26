@@ -225,7 +225,7 @@
 }
 
 #nextPage {
-    font-size: 5.5vw;
+    font-size: 3vmax;
     padding-bottom: 1vh;
     width: 42vw;
     height: 7vh;
@@ -241,7 +241,7 @@
 }
 
 #prevPage {
-    font-size: 5.5vw;
+    font-size: 3vmax;
     padding-bottom: 1vh;
     width: 42vw;
     height: 7vh;

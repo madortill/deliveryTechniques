@@ -309,7 +309,7 @@ export default {
     height: 7vh;
     border-style: none;
     background-color: transparent;
-    font-size: 5.5vw;
+    font-size: 2.5vmax;
     padding-bottom: 1vh;
     background-image: url("@/assets/images/continueButton.png");
     background-size: 100% 100%;
