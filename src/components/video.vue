@@ -60,7 +60,7 @@ export default {
   padding-bottom: 1vh;
   border-style: none;
   background-color: transparent;
-  font-size: 5.5vw;
+  font-size: 2.5vmax;
   position: fixed;
   bottom: 8vh;
   background-image: url("@/assets/images/continueButton.png");
