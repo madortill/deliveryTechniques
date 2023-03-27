@@ -260,7 +260,7 @@
     background-image: url("@/assets/images/board.png");
     background-size: 100% 100%;
     width: 108vw;
-    height: 52.3vh;
+    height: 51vh;
     position: relative;
     bottom: 30vh;
 }
@@ -295,7 +295,7 @@
 }
 
 #text {
-    padding-top: 4.1vh;
+    padding-top: 4.4vh;
     padding-left: 4.4vh;
     font-size: 4.75vw;
     direction: rtl;

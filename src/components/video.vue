@@ -22,7 +22,7 @@ export default {
       <div class="board playAnimation">
         <iframe src="https://www.youtube.com/embed/kRIV8_lgpfU" title="YouTube video player" frameborder="0" class="speakingVideo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
-      <button id="toExplanation" @click="nextPage = 'explain'">לתקציר</button>
+      <button id="toExplanation" @click="nextPage = 'explain'" class="playAnimationOnButton">לתקציר</button>
     </div>
     <ExplanationPage v-else @backPage="showPage"></ExplanationPage>
   </div>
@@ -55,8 +55,8 @@ export default {
 }
 
 #toExplanation {
-  width: 42vw;
-  height: 7vh;
+  width: 45vw;
+  height: 10vh;
   padding-bottom: 1vh;
   border-style: none;
   background-color: transparent;
@@ -84,5 +84,24 @@ export default {
   width: 107vw;
   transform: scale(1.15, 1.15);
   justify-content: center;
+}
+
+@keyframes smallerButton {
+  100% {
+    width: 42vw;
+    height: 7vh;
+  }
+}
+
+@-webkit-keyframes smallerButton {
+  100% {
+    width: 42vw;
+    height: 7vh;
+  }
+}
+
+.playAnimationOnButton{
+  animation: smallerButton 1s ease-out forwards;
+  -webkit-animation: smallerButton 1s ease-out forwards;
 }
 </style> 
