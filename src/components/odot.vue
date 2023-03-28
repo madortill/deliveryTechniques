@@ -112,7 +112,7 @@ export default {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 85vw;
-    padding-top: 8vw;
+    padding-top: 9vw;
     padding-left: 5vw;
     padding-right: 5vw;
     height: 70.5vh;

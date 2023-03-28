@@ -77,6 +77,9 @@ export default {
 
 
 <style scoped>
+body::after {
+    content: url("/soldier1Glow.svg"), url("/soldier2Glow.svg"), url("/soldier3Glow.svg"), url("/soldier4Glow.svg"), url("/soldier5Glow.svg"), url("/soldier1.svg"), url("/soldier2.svg"), url("/soldier3.svg"), url("/soldier4.svg"), url("/soldier5.svg");
+}
 .bubble {
     position: absolute;
     top: 21vh;

@@ -202,8 +202,8 @@
     display: flex;
     flex-wrap: wrap;
     width: 100vw;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    justify-content: center;
 }
 
 #help {
@@ -214,14 +214,14 @@
   top: 1vh;
 }
 .summary {
-    display: flex; 
+    align-content: center;
+    display: flex;
     width: 100vw;
     height: 100vh;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    align-content: center;
 }
 
 #nextPage {
@@ -260,7 +260,7 @@
     background-image: url("@/assets/images/board.png");
     background-size: 100% 100%;
     width: 108vw;
-    height: 51vh;
+    height: 52vh;
     position: relative;
     bottom: 30vh;
 }
@@ -295,11 +295,11 @@
 }
 
 #text {
-    padding-top: 4.4vh;
+    padding-top: 4.1vh;
     padding-left: 4.4vh;
-    font-size: 4.75vw;
+    font-size: 4.7vw;
     direction: rtl;
-    width: 85vw;
+    width: 86vw;
 }
 
 </style>
