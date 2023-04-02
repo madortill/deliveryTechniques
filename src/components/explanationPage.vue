@@ -130,8 +130,10 @@
                     </div>
                 </div>
             </div>
-            <button type="button" id="nextPage" @click="nextPage">נמשיך לתרגול</button>
-            <button type="button" id="prevPage" @click="prevPage">חזרה לסרטון</button>
+            <div class="flex">
+                <button type="button" id="nextPage" @click="nextPage">נמשיך לתרגול</button>
+                <button type="button" id="prevPage" @click="prevPage">חזרה לסרטון</button>
+            </div>
         </div>
         <instructionsVue v-else @prevPage="showPage"></instructionsVue>
     </div>
@@ -141,6 +143,12 @@
 @font-face {
   font-family: "heebo";
   src: url("C:/Users/USER/Documents/projects/לומדת טכניקת מסירה/src/assets/Heebo/Heebo-VariableFont_wght.ttf");
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
 }
 
 #videoSummary {
@@ -230,9 +238,9 @@
     width: 42vw;
     height: 7.5vh;
     font-family: "heebo";
-    position: fixed;
+    /* position: fixed;
     bottom: 8vh;
-    left: 4vw;
+    left: 4vw; */
     background-image: url("@/assets/images/continueButton.png");
     background-size: 100% 100%;
     background-color: transparent;
@@ -246,9 +254,9 @@
     width: 42vw;
     height: 7.5vh;
     font-family: "heebo";
-    position: fixed;
+    /* position: fixed;
     bottom: 8vh;
-    right: 4vw;
+    right: 4vw; */
     background-image: url("@/assets/images/continueButton.png");
     background-size: 100% 100%;
     background-color: transparent;
@@ -260,7 +268,7 @@
     background-image: url("@/assets/images/board.png");
     background-size: 100% 100%;
     width: 108vw;
-    height: 52vh;
+    height: 51vh;
     position: relative;
     bottom: 30vh;
 }

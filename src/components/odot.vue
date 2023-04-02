@@ -80,7 +80,7 @@ export default {
 }
 
 .smallerFont {
-    font-size: 4.5vw;
+    font-size: 4.35vw;
 }
 
 #previous {
@@ -89,8 +89,7 @@ export default {
     padding-bottom: 1vh;
     border-style: none;
     background-color: transparent;
-    font-size: 5.5vw;
-    margin-bottom: 6vh;
+    font-size: 2.5vmax;
     background-image: url("@/assets/images/continueButton.png");
     background-size: 100% 100%;
     color: white;
@@ -106,13 +105,14 @@ export default {
 }
 
 #allInfo {
-    margin-top: 10vh;
+    margin-top: 9.6vh;
     line-height: 3.4vh;
     background-image: url("@/assets/images/explanationBoard.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 85vw;
-    padding-top: 10vw;
+    font-size: 4.75vw;
+    padding-top: 9vw;
     padding-left: 5vw;
     padding-right: 5vw;
     height: 70.5vh;
