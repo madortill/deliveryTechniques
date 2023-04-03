@@ -6,6 +6,7 @@ export default {
   data() {
       return {
         page: "start", 
+        isloaded: false
       };
   },
   methods: {
@@ -16,7 +17,12 @@ export default {
     }
   },
   mounted() {
-    this.$refs.loader.classList.add("fade");
+    document.onreadystatechange = () => {
+      if (document.readyState == "complete") {
+        this.$refs.loader.classList.add("fade");
+        this.isloaded = true;
+      }
+    }
   },
   components: { Odot, videoVue }
   };
@@ -24,7 +30,7 @@ export default {
 
 <template>
   <div id="app">
-    <div class="loader" ref="loader">
+    <div class="loader" ref="loader" v-if="!isloaded">
         <img src="/center and mask.gif" alt="Loading..." />
         מייד מתחילים...
     </div>
