@@ -149,6 +149,8 @@
     display: flex;
     justify-content: space-evenly;
     width: 100vw;
+    position: absolute;
+    top: 84.5vh;
 }
 
 #videoSummary {
@@ -268,7 +270,7 @@
     background-image: url("@/assets/images/board.png");
     background-size: 100% 100%;
     width: 108vw;
-    height: 51vh;
+    height: 51.5vh;
     position: relative;
     bottom: 30vh;
 }
