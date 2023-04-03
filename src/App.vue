@@ -15,12 +15,19 @@ export default {
       document.getElementById("beginLesson").disabled = false;
     }
   },
+  mounted() {
+    this.$refs.loader.classList.add("fade");
+  },
   components: { Odot, videoVue }
   };
 </script>
 
 <template>
   <div id="app">
+    <div class="loader" ref="loader">
+        <img src="/center and mask.gif" alt="Loading..." />
+        מייד מתחילים...
+    </div>
     <div class="openingPage" v-if="page==='start'">
       <img src="@/assets/images/odot2.svg" alt="odot" id="icon" @click="page='odot'" />
       <div class="boardAndButton">
@@ -52,6 +59,37 @@ body {
   height: 80vh;
   width: 100vw;
   overflow: hidden;
+}
+.loader {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    direction: rtl;
+    justify-content: center;
+    align-items: center;
+    color: #79BEE0;
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.loader > img {
+    width: 50vw;
+}
+
+.loader.fade {
+    animation: fadeOut 1s 2s forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 #app {
