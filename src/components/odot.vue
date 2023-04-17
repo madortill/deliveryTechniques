@@ -105,16 +105,16 @@ export default {
 }
 
 #allInfo {
-    margin-top: 9vh;
-    line-height: 3.4vh;
+    margin-top: 9.6vh;
+    line-height: 3.3vh;
     background-image: url("@/assets/images/explanationBoard.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 85vw;
     font-size: 4.5vw;
     padding-top: 8vw;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    height: 70vh;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    height: 68.3vh;
 }
 </style>
