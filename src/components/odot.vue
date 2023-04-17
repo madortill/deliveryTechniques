@@ -115,6 +115,6 @@ export default {
     padding-top: 8vw;
     padding-left: 5vw;
     padding-right: 5vw;
-    height: 70.5vh;
+    height: 70vh;
 }
 </style>
