@@ -167,7 +167,6 @@ body::after {
 
 .level7 {
     background-image: url("/soldier3.svg");
-    width: 57vw;
 }
 
 .level8 {
