@@ -151,7 +151,7 @@ body {
 }
 
 #beginLesson {
-  width: 45vw;
+  width: 47vw;
   height: 10vh;
   border-style: none;
   padding-bottom: 1vh;

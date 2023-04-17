@@ -84,7 +84,7 @@ export default {
 }
 
 .previous {
-    width: 45vw;
+    width: 47vw;
     height: 10vh;
     position: absolute;
     top: 80vh;
