@@ -80,7 +80,7 @@ export default {
 }
 
 .smallerFont {
-    font-size: 4.35vw;
+    font-size: 4.3vw;
 }
 
 #previous {
@@ -105,14 +105,14 @@ export default {
 }
 
 #allInfo {
-    margin-top: 9.6vh;
+    margin-top: 9vh;
     line-height: 3.4vh;
     background-image: url("@/assets/images/explanationBoard.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 85vw;
-    font-size: 4.75vw;
-    padding-top: 9vw;
+    font-size: 4.5vw;
+    padding-top: 8vw;
     padding-left: 5vw;
     padding-right: 5vw;
     height: 70.5vh;
