@@ -159,7 +159,7 @@
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    bottom: 3.5vh;
+    bottom: 3.8vh;
 }
 
 #explanationPage {
