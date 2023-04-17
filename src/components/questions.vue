@@ -315,8 +315,8 @@ export default {
     background-size: 100% 100%;
     font-family: "heebo";
     color: white;
-    position: fixed;
-    bottom: 8vh;
+    position: absolute;
+    top: 82vh;
 }
 
 .questionContainer {
