@@ -150,7 +150,7 @@
     justify-content: space-evenly;
     width: 100vw;
     position: absolute;
-    top: 83.5vh;
+    top: 83vh;
 }
 
 #videoSummary {
