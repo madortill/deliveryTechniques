@@ -66,7 +66,7 @@ export default {
             </div>
             
         </div>
-        <button type="button" id="previous" @click="sendBack">חזרה לפתיחה</button>
+        <button type="button" class="playAnimationOnButton previous" @click="sendBack">חזרה לפתיחה</button>
     </div>
 </template>
 
@@ -83,9 +83,11 @@ export default {
     font-size: 4.3vw;
 }
 
-#previous {
-    width: 42vw;
-    height: 7vh;
+.previous {
+    width: 45vw;
+    height: 10vh;
+    position: absolute;
+    top: 80vh;
     padding-bottom: 1vh;
     border-style: none;
     background-color: transparent;
@@ -116,5 +118,28 @@ export default {
     padding-left: 4vw;
     padding-right: 4vw;
     height: 68.3vh;
+}
+
+@keyframes smallerButton {
+  100% {
+    width: 42vw;
+    height: 7vh;
+    position: absolute;
+    top: 82vh;
+  }
+}
+
+@-webkit-keyframes smallerButton {
+  100% {
+    width: 42vw;
+    height: 7vh;
+    position: absolute;
+    top: 82vh;
+  }
+}
+
+.playAnimationOnButton {
+  animation: smallerButton 1s ease-out forwards;
+  -webkit-animation: smallerButton 1s ease-out forwards;
 }
 </style>

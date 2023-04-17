@@ -159,7 +159,7 @@ body {
   background-color: transparent;
   font-size: 6vw;
   position: absolute;
-  top: 69vh;
+  top: 66vh;
   font-family: "heebo";
   background-image: url("@/assets/images/continueButton.png");
   background-size: 100% 100%;
