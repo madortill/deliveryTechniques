@@ -150,7 +150,7 @@
     justify-content: space-evenly;
     width: 100vw;
     position: absolute;
-    top: 84.5vh;
+    top: 83.5vh;
 }
 
 #videoSummary {
@@ -240,9 +240,6 @@
     width: 42vw;
     height: 7.5vh;
     font-family: "heebo";
-    /* position: fixed;
-    bottom: 8vh;
-    left: 4vw; */
     background-image: url("@/assets/images/continueButton.png");
     background-size: 100% 100%;
     background-color: transparent;
@@ -256,9 +253,6 @@
     width: 42vw;
     height: 7.5vh;
     font-family: "heebo";
-    /* position: fixed;
-    bottom: 8vh;
-    right: 4vw; */
     background-image: url("@/assets/images/continueButton.png");
     background-size: 100% 100%;
     background-color: transparent;
@@ -271,8 +265,8 @@
     background-size: 100% 100%;
     width: 108vw;
     height: 51.5vh;
-    position: relative;
-    bottom: 30vh;
+    position: absolute;
+    top: 21vh;
 }
 
 .playAnimation {
@@ -294,10 +288,10 @@
 
 .buttons {
     width: 32vw;
-    height: 7vh;
+    height: 6.5vh;
     margin-left: 1vw;
     background-size: 100% 100%;
-    font-size: 4.5vw;
+    font-size: 2.4vmax;
     background-color: transparent;
     border-style: none;
     color: white;
