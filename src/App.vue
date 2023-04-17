@@ -152,7 +152,7 @@ body {
 
 #beginLesson {
   width: 50vw;
-  height: 11vh;
+  height: 10.5vh;
   border-style: none;
   padding-bottom: 1vh;
   color: white;

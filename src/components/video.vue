@@ -55,7 +55,7 @@ export default {
 }
 
 #toExplanation {
-  width: 49vw;
+  width: 50vw;
   height: 10vh;
   padding-bottom: 1vh;
   border-style: none;
