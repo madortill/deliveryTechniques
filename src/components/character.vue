@@ -55,10 +55,12 @@ export default {
     }, 
     methods: {
         updateQuestion() {
+            // debugger;
             this.dontPressCharacter = true;
             this.isGlow = false;
             
             let timer = setTimeout (() => {
+                // debugger;
                 this.isGlow = true;
                 this.$emit("update");
             }, 1000);
@@ -70,7 +72,7 @@ export default {
 
 <template>
     <div id="character">
-        <div ref="soldier" class="soldierGlow" @click="updateQuestion" :disabled="dontPressCharacter" :class="isGlow ? [currentCharacter, 'soldierGlow'] : [toggleGlow, 'soldier']"></div>
+        <div ref="soldier" class="soldierGlow" @click="updateQuestion" :disabled="dontPressCharacter" :class="isGlow ? [currentCharacter, 'soldierGlow'] : [toggleGlow, 'soldier']" :id="isGlow ? `level${questionCounter}Glow` : `level${questionCounter}`"></div>
         <div class="bubble">{{ characterImages[questionCounter]["sayingBubble"] }}</div>
     </div>
 </template>
@@ -82,8 +84,8 @@ body::after {
 }
 .bubble {
     position: absolute;
-    top: 21vh;
-    left: 24vw;
+    top: 17vh;
+    left: 27vw;
     width: 40vw;
     font-size: 4.5vw;
     text-align: center;
@@ -173,6 +175,48 @@ body::after {
     background-image: url("/soldier4.svg");
 }
 
+#level8Glow {
+    position: relative;
+    bottom: 7vh;
+    left: 12vw;
+}
+
+#level8 {
+    transform: scale(2);
+}
+
+#level10Glow {
+    position: relative;
+    left: 8vw;
+}
+
+#level10 {
+    transform: scale(2);
+}
+
+#level3 {
+    position: relative;
+    left: 3vw;
+    top: 29vh;
+}
+
+#level3Glow {
+    position: relative;
+    left: -4vw;
+}
+
+#level6 {
+    position: relative;
+    top: 28vh;
+    left: 3vw;
+}
+
+#level6Glow {
+    position: relative;
+    top: 2vh;
+}
+
+
 .level9 {
     background-image: url("/soldier4.svg");
 }
@@ -195,18 +239,18 @@ body::after {
 
 .soldierGlow {
     background-size: 120% 117%;
+    transform: scale(1.5);
     background-repeat: no-repeat;
-    position: relative;
-    bottom: 7vh;
     width: 100vw;
     height: 600vh;
 }
 
 .soldier {
     background-size: 100% 100%;
+    transform: scale(1.5);
     background-repeat: no-repeat;
     position: relative;
-    top: 15vh;
+    top: 27vh;
     width: 53vw;
     height: 77vh;
 }
