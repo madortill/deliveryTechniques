@@ -84,7 +84,7 @@ body::after {
 }
 .bubble {
     position: absolute;
-    top: 17vh;
+    top: 19vh;
     left: 27vw;
     width: 40vw;
     font-size: 4.5vw;
