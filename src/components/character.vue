@@ -94,7 +94,7 @@ export default {
     direction: rtl;
     text-align: center;
     position: absolute;
-    bottom: 1vh;
+    bottom: 10vh;
     left: 1vw;
     width: 70vw;
     border-radius: 3vw;
