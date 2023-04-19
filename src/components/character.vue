@@ -6,40 +6,52 @@ export default {
             isGlow: true,
             characterImages: [
                 {
-                    sayingBubble: "..."
+                    sayingBubble: "...", 
+                    explanationBubble: "תלחצו על הדמות כדי לעזור לה להתכונן לשיעור"
                 },
                 {
-                    sayingBubble: "מה לומר להם?"
+                    sayingBubble: "מה לומר להם?",
+                    explanationBubble: "תודה שעזרתם למפקדת לבוא בזמן לשיעור"
                 },
                 {
-                    sayingBubble: ""
+                    sayingBubble: "",
+                    explanationBubble: ""
                 }, 
                 {
-                    sayingBubble: "..."
+                    sayingBubble: "...",
+                    explanationBubble: "תודה שעזרתם לה להיכנס מדוגמת לשיעור"
                 },
                 {
-                    sayingBubble: ""
+                    sayingBubble: "",
+                    explanationBubble: ""
                 }, 
                 {
-                    sayingBubble: ""
+                    sayingBubble: "",
+                    explanationBubble: ""
                 },
                 {
-                    sayingBubble: "*לוחשת*"
+                    sayingBubble: "*לוחשת*",
+                    explanationBubble: "עכשיו עזרתם לה ליצור קשר עין עם החיילים"
                 }, 
                 {
-                    sayingBubble: ""
+                    sayingBubble: "",
+                    explanationBubble: ""
                 },
                 {
-                    sayingBubble: "היום נעבור שיעור על טכניקות מסירה!"
+                    sayingBubble: "היום נעבור שיעור על טכניקות מסירה!",
+                    explanationBubble: "תודה רבה! עכשיו המפקדת מצליחה לדבר בקול גבוה ולא מונוטוני ממול החיילים."
                 }, 
                 {
-                    sayingBubble: ""
+                    sayingBubble: "",
+                    explanationBubble: ""
                 }, 
                 {
-                    sayingBubble: "נעבור על הנושאים הבאים"
+                    sayingBubble: "נעבור על הנושאים הבאים",
+                    explanationBubble: "המפקדת עכשיו בקיאה בחומר שהיא מלמדת את כולם!"
                 },
                 {
-                    sayingBubble: ""
+                    sayingBubble: "",
+                    explanationBubble: ""
                 }
             ],
             dontPressCharacter: false
@@ -55,12 +67,10 @@ export default {
     }, 
     methods: {
         updateQuestion() {
-            // debugger;
             this.dontPressCharacter = true;
             this.isGlow = false;
             
             let timer = setTimeout (() => {
-                // debugger;
                 this.isGlow = true;
                 this.$emit("update");
             }, 1000);
@@ -74,17 +84,28 @@ export default {
     <div id="character">
         <div ref="soldier" class="soldierGlow" @click="updateQuestion" :disabled="dontPressCharacter" :class="isGlow ? [currentCharacter, 'soldierGlow'] : [toggleGlow, 'soldier']" :id="isGlow ? `level${questionCounter}Glow` : `level${questionCounter}`"></div>
         <div class="bubble">{{ characterImages[questionCounter]["sayingBubble"] }}</div>
+        <div class="explanation">{{ characterImages[questionCounter]["explanationBubble"] }}</div>
     </div>
 </template>
 
 
 <style scoped>
+.explanation {
+    direction: rtl;
+    text-align: center;
+    position: absolute;
+    bottom: 1vh;
+    left: 1vw;
+    width: 70vw;
+    border-radius: 3vw;
+    background-color: rgba(255, 255, 255, 0.856);
+}
 body::after {
     content: url("/soldier1Glow.svg"), url("/soldier2Glow.svg"), url("/soldier3Glow.svg"), url("/soldier4Glow.svg"), url("/soldier5Glow.svg"), url("/soldier1.svg"), url("/soldier2.svg"), url("/soldier3.svg"), url("/soldier4.svg"), url("/soldier5.svg");
 }
 .bubble {
     position: absolute;
-    top: 19vh;
+    top: 21vh;
     left: 27vw;
     width: 40vw;
     font-size: 4.5vw;
