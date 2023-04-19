@@ -95,7 +95,7 @@ export default {
     text-align: center;
     position: absolute;
     bottom: 2vh;
-    left: 1vw;
+    left: 16vw;
     width: 70vw;
     border-radius: 3vw;
     background-color: rgba(255, 255, 255, 0.856);
