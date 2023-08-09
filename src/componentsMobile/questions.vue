@@ -254,7 +254,7 @@ export default {
     <div id="questions">
         <div class="questionContainer">
             <div class="level"><b>טכניקות מסירה</b></div>
-            <div class="question">{{ listOfQuestions[Number(questionCounter)]["question"] }}</div>
+            <div id="question">{{ listOfQuestions[Number(questionCounter)]["question"] }}</div>
             <div id="help" v-show="this.questionCounter === 3" @click="showPicture">לצפייה בתמונה</div>
             <img src="https://lh4.googleusercontent.com/Ezh_FXiYmVyAkwJ6SFS815F5caWhBdqXJT9MfIs1nIdpXcdokTCnRe2ymqn103botttD5Yu0ri4Sf8Wt1cHPZMQWf_TLnawpuGUj-khdZCbQxHuFxc2AO0uy_IcCvewUpg=w740" alt="Captionless Image" id="picture" :class="help === 'hide' ? 'hidden' : 'show'" />
         </div>
@@ -277,29 +277,24 @@ export default {
 }
 
 #help {
-  width: 9vw;
-  height: 5vh;
-  padding-top: 0.5vh;
-  padding-bottom: 0.55vh;
+  width: 37vw;
+  height: 6vh;
   background-image: url("@/assets/images/continueButton.png");
-  background-size: 100% 100%;
+  background-size: 100% 100% ;
   color: white;
-  /* margin-right: 14vw; */
-  margin-top: 1vh;
-  font-size: 1.1vmax
+  margin-right: 40vw;
 }
 
 #questions {
-    /* padding-top: 10vh; */
-    margin-top: 12vh;
+    padding: 2vh;
     display: flex;
-    /* margin-top: 7vh; */
     flex-direction: column;
+    margin-top: 1vh;
     direction: rtl;
     text-align: center;
     align-items: center;
-    justify-content: space-around;
-    height: 90%;
+    justify-content: flex-start;
+    height: 100vh;
 }
 
 .level {
@@ -310,40 +305,37 @@ export default {
 }
 
 #check {
-    width: 20vw;
-    height: 10.5vh;
+    width: 42vw;
+    height: 7vh;
     border-style: none;
-    padding-bottom: 1vh;
-    color: white;
     background-color: transparent;
-    font-size: 2vmax;
-    font-family: "heebo";
+    font-size: 2.5vmax;
+    padding-bottom: 1vh;
     background-image: url("@/assets/images/continueButton.png");
     background-size: 100% 100%;
+    font-family: "heebo";
+    color: white;
+    position: absolute;
+    top: 82vh;
 }
 
 .questionContainer {
+    margin-top: 8vh;
     background-image: url("@/assets/images/board.png");
     background-size: 100% 100%;
-    transform: scale(1.75, 1.75);
-    background-repeat: no-repeat;
-    height: 30vh;
-    width: 30vw;
+    width: 100vw;
+    height: 37vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.question {
+#question {
     text-align: center;
-    font-size: 1.4vmax;
-    z-index: 1000;
-    padding-top: 3vh;
-    width: 75%;
-    /* margin-top: 3vh; */
-    /* font-size: 6vw; */
+    margin-top: 3vh;
+    font-size: 6vw;
     direction: rtl;
-    /* width: 87vw; */
+    width: 87vw;
 }
 
 .answers {
@@ -354,20 +346,20 @@ export default {
     font-family: "heebo";
     color: white;
     margin-top: 1vh;
-    width: 15vw;
-    height: 7vh;
-    font-size: 1.3vmax;
+    width: 33vw;
+    height: 10.5vh;
+    font-size: 4.4vw;
 }
 
 #picture {
-    width: 20vw;
+    width: 74vw;
     z-index: 100;
     margin-top: 2vh;
 }
 
 .containerForAnswers {
-    width: 50vw;
-    height: 20vh;
+    width: 100vw;
+    height: 25vh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;

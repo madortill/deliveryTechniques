@@ -17,6 +17,7 @@ export default {
 <template>
     <div id="odot">
         <div id="allInfo">
+            <div class="container">
                 <div class="info">
                     <b>מומחה תוכן</b>
                     <div class="smallerFont">
@@ -61,7 +62,9 @@ export default {
                         טלפון שלומי אוגרן: 052-5364232<br>
                         טלפון אביב אואנונו: 052-8394566<br>
                     </div>
-                </div>            
+                </div>
+            </div>
+            
         </div>
         <button type="button" class="playAnimationOnButton previous" @click="sendBack">חזרה לפתיחה</button>
     </div>
@@ -71,61 +74,58 @@ export default {
 <style scoped>
 #odot {
     font-family: "heebo";
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
 }
 
 .smallerFont {
-    font-size: 0.7vmax;
+    font-size: 4.3vw;
 }
 
 .previous {
-    width: 20vw;
-    height: 10.5vh;
-    border-style: none;
+    width: 50vw;
+    height: 10vh;
+    position: absolute;
+    top: 80vh;
     padding-bottom: 1vh;
-    color: white;
+    border-style: none;
     background-color: transparent;
-    font-size: 2vmax;
-    font-family: "heebo";
+    font-size: 2.5vmax;
     background-image: url("@/assets/images/continueButton.png");
     background-size: 100% 100%;
+    color: white;
+    font-family: "heebo";
 }
 
 .info {
-    padding: 0.2vw;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     direction: rtl;
 }
 
 #allInfo {
-    background-image: url("@/assets/images/board.png");
+    margin-top: 9.6vh;
+    line-height: 3.3vh;
+    background-image: url("@/assets/images/explanationBoard.png");
     background-size: 100% 100%;
-    transform: scale(1.75, 1.75);
     background-repeat: no-repeat;
-    height: 22.5vh;
-    width: 25vw;
-    margin-top: 3vh;
-    display: flex;
-    flex-wrap: wrap;
-    direction: rtl;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9vmax;
-    padding-top: 2.5vh;
-    padding-left: 2.5vw;
-    padding-bottom: 5vh;
-    padding-right: 2.5vw;
+    width: 85vw;
+    font-size: 4.5vw;
+    padding-top: 7.7vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    height: 68.3vh;
 }
 
-/* @keyframes smallerButton {
+@keyframes smallerButton {
   100% {
     width: 42vw;
     height: 7vh;
+    position: absolute;
+    top: 82vh;
   }
 }
 
@@ -133,11 +133,13 @@ export default {
   100% {
     width: 42vw;
     height: 7vh;
+    position: absolute;
+    top: 82vh;
   }
-} */
+}
 
- /* .playAnimationOnButton {
+.playAnimationOnButton {
   animation: smallerButton 1s ease-out forwards;
   -webkit-animation: smallerButton 1s ease-out forwards;
-} */ 
+}
 </style>

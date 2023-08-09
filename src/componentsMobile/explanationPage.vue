@@ -5,7 +5,7 @@
             return {
                 pressed: false,
                 chosenButton: "",
-                help: "none",
+                help: "hide",
                 pressedButton: [], 
                 texts: [
                     {
@@ -90,10 +90,10 @@
                 event.currentTarget.classList.add("current");
             }, 
             showInstruction() {
-                if (this.help === "none") {
-                    this.help = "block";
+                if (this.help === "hide") {
+                    this.help = "show";
                 } else {
-                    this.help = "none";
+                    this.help = "hide";
                 }
             }, 
             prevPage() {
@@ -111,14 +111,14 @@
     <div id="explanationPage">
         <div class="summary" v-if="pressed === false">
             <img src="@/assets/images/help.png" alt="help" id="help" @click="showInstruction"/>
-            <div id="instruction" ref="instruction" :class="help === 'none' ? 'none' : 'block'">בלחיצה על טכניקת המסירה יופיע ההסבר המתאים</div>
-            <!-- <div id="videoSummary"> -->
+            <div id="instruction" ref="instruction" :class="help === 'hide' ? 'hidden' : 'show'">בלחיצה על טכניקת המסירה יופיע ההסבר המתאים</div>
+            <div id="videoSummary">
                 <div class="buttonContainer">
                     <button type="button" class="buttons answers" v-for="info in texts" :key="info.buttonName + ' btn'" @click="recognizeButton">{{ info.buttonName }}</button>
                 </div>
                 <div class="board playAnimation">
                     <div v-for="info in texts" :key="info.buttonName + ' text'" v-show="chosenButton === info.buttonName" id="text">
-                        <div v-show="info.extra1" class="text2" :class="info.extra1 !== '' ? 'block' : 'none'">
+                        <div v-show="info.extra1" :class="info.extra1 !== '' ? 'block' : 'none'">
                             {{ info.extra1 }}
                         </div>
                         <ul>
@@ -126,10 +126,10 @@
                                 {{ content }}
                             </li>
                         </ul>
-                        <div v-show="info.extra2" class="text2" :class="info.extra2 !== '' ? 'block' : 'none' ">{{ info.extra2 }}</div>
+                        <div v-show="info.extra2" :class="info.extra2 !== '' ? 'block' : 'none' ">{{ info.extra2 }}</div>
                     </div>
                 </div>
-            <!-- </div> -->
+            </div>
             <div class="flex">
                 <button type="button" id="nextPage" @click="nextPage">נמשיך לתרגול</button>
                 <button type="button" id="prevPage" @click="prevPage">חזרה לסרטון</button>
@@ -148,12 +148,9 @@
 .flex {
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
-}
-
-.text2 {
-    padding-right: 2vw;
-    line-height: 1.5vh;
+    width: 100vw;
+    position: absolute;
+    top: 83vh;
 }
 
 #videoSummary {
@@ -161,25 +158,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    position: relative;
+    bottom: 3.8vh;
 }
 
 #explanationPage {
-    height: 100%;
-    width: 100%;
-    font-family: "heebo";
-    user-select: none;
-    overflow: hidden;
+  font-family: "heebo";
+  user-select: none;
+  overflow: hidden;
 }
 
 #instruction {
     direction: rtl;
     text-align: center;
-    position: absolute;
+    position: relative;
     z-index: 100;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 1vw;
-    padding: 3vh 1vh;
-    top: 5vh;
+    background-color: rgba(255, 255, 255, 0.856);
+    border-radius: 3vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    top: 2vh;
 }
 
 .none {
@@ -187,7 +185,6 @@
 }
 
 .block {
-    position: fixed;
     display: block;
 }
 
@@ -211,70 +208,65 @@
     background-image: url("@/assets/images/answerButton.png");
 }
 .buttonContainer {
-    height: 20vh;
+    height: 22vh;
     display: flex;
     flex-wrap: wrap;
-    width: 60vw;
+    width: 100vw;
     flex-direction: row-reverse;
     justify-content: center;
 }
 
 #help {
-    width: 2.2vw;
-    height: 3.75vh;
-    position: absolute;
-    right: 1vw;
-    top: 1vh;
+  width: 7vw;
+  height: 4vh;
+  position: relative;
+  left: 45vw;
+  top: 1vh;
 }
 .summary {
+    align-content: center;
     display: flex;
-    /* width: 100vw; */
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
 }
 
 #nextPage {
-    width: 20vw;
-    height: 10.5vh;
-    border-style: none;
+    font-size: 2.5vmax;
     padding-bottom: 1vh;
-    color: white;
-    background-color: transparent;
-    font-size: 2vmax;
+    width: 42vw;
+    height: 7.5vh;
     font-family: "heebo";
     background-image: url("@/assets/images/continueButton.png");
     background-size: 100% 100%;
+    background-color: transparent;
+    border-style: none;
+    color: white;
 }
 
 #prevPage {
-    width: 20vw;
-  height: 10.5vh;
-  border-style: none;
-  padding-bottom: 1vh;
-  color: white;
-  background-color: transparent;
-  font-size: 2vmax;
-  font-family: "heebo";
-  background-image: url("@/assets/images/continueButton.png");
-  background-size: 100% 100%;
+    font-size: 2.5vmax;
+    padding-bottom: 1vh;
+    width: 42vw;
+    height: 7.5vh;
+    font-family: "heebo";
+    background-image: url("@/assets/images/continueButton.png");
+    background-size: 100% 100%;
+    background-color: transparent;
+    border-style: none;
+    color: white;
 }
 
 .board {
     background-image: url("@/assets/images/board.png");
     background-size: 100% 100%;
-    transform: scale(1.75, 1.75);
-    background-repeat: no-repeat;
-    height: 30vh;
-    width: 30vw;
-    position: relative;
-    bottom: 23vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 108vw;
+    height: 51.5vh;
+    position: absolute;
+    top: 21vh;
 }
 
 .playAnimation {
@@ -295,11 +287,11 @@
 }
 
 .buttons {
-    width: 12vw;
+    width: 32vw;
     height: 6.5vh;
     margin-left: 1vw;
     background-size: 100% 100%;
-    font-size: 1.5vmax;
+    font-size: 2.4vmax;
     background-color: transparent;
     border-style: none;
     color: white;
@@ -307,13 +299,11 @@
 }
 
 #text {
-    /* padding-top: 4.1vh; */
-    /* padding-right: 1.7vh; */
-    font-size: 1.5vh;
-    height: 80%;
-    /* font-size: 4.7vw; */
+    padding-top: 4.1vh;
+    padding-left: 4.4vh;
+    font-size: 4.7vw;
     direction: rtl;
-    width: 87%;
+    width: 86vw;
 }
 
 </style>

@@ -94,26 +94,21 @@ export default {
     direction: rtl;
     text-align: center;
     position: absolute;
-    bottom: 5vh;
+    bottom: 2vh;
     left: 16vw;
     width: 70vw;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    border-radius: 1vw;
+    border-radius: 3vw;
     background-color: rgba(255, 255, 255, 0.856);
 }
-
 body::after {
     content: url("/soldier1Glow.svg"), url("/soldier2Glow.svg"), url("/soldier3Glow.svg"), url("/soldier4Glow.svg"), url("/soldier5Glow.svg"), url("/soldier1.svg"), url("/soldier2.svg"), url("/soldier3.svg"), url("/soldier4.svg"), url("/soldier5.svg");
 }
-
 .bubble {
-    width: 40vw;
-    z-index: 100;
-    font-size: 1.2vmax;
     position: absolute;
-    top: 17vh;
-    right: 22vw;
+    top: 21vh;
+    left: 27vw;
+    width: 40vw;
+    font-size: 4.5vw;
     text-align: center;
     direction: rtl;
 }
@@ -242,6 +237,7 @@ body::after {
     top: 2vh;
 }
 
+
 .level9 {
     background-image: url("/soldier4.svg");
 }
@@ -268,7 +264,6 @@ body::after {
     background-repeat: no-repeat;
     width: 100vw;
     height: 600vh;
-    cursor: pointer;
 }
 
 .soldier {

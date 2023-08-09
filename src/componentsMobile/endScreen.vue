@@ -10,7 +10,6 @@
 
 <style scoped>
 #endScreen {
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,19 +18,21 @@
 #message{
     margin-top: 10vh;
     padding-top: 5vh;
-    font-size: 7vh;
+    font-size: 14vw;
     text-align: center;
     direction: rtl;
     color: #185f64;
 }
 
 .message{
-    font-size: 5vh;
+    font-size: 12vw;
     text-align: center;
     direction: rtl;
 }
 .table {
-    width: 40vw;
-    height: 30vh;
+    width: 100vw;
+    height: 40vh;
+    position: absolute;
+    bottom: 2vh;
 }
 </style>

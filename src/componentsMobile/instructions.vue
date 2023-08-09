@@ -21,7 +21,7 @@ export default {
 <template>
     <div id="instrctions">
         <div v-if="nextPage === false" class="page">
-            <div class="board playAnimationOnBoard">
+            <div class="board playAnimation">
                 <div class="text">
                     המפקדת מאחרת לשיעור אבל היא לא מדוגמת ולא מוכנה לעמוד מול הקהל. כאן התפקיד שלכם נכנס לתמונה: תענו על השאלות נכון וכך תוכלו לעזור לה להתכונן לשיעור. 
                 </div>
@@ -39,38 +39,22 @@ export default {
 
 
 <style scoped>
-#instrctions {
-    height: 100%;
-}
-
 .text {
     text-align: center;
-    /* padding-top: 4vh; */
-    font-size: 2vh;
-    width: 25vw;
+    padding-top: 4vh;
+    width: 85vw;
 }
 
 @keyframes higherBoard {
-  0% {
-    top: 20vh;
-  }
   100% {
-    top: 0vh;
+    top: -7.5vh;
   }
 }
 
 @-webkit-keyframes higherBoard {
-  0% {
-    top: 20vh;
-  }
   100% {
-    top: 0vh;
+    top: -7.5vh;
   }
-}
-
-.playAnimationOnBoard{
-  animation: higherBoard 1s ease-out forwards;
-  -webkit-animation: higherBoard 1s ease-out forwards;
 }
 
 .playAnimation {
@@ -81,60 +65,61 @@ export default {
 .buttonCont {
     display: flex;
     flex-direction: row-reverse;
-    width: 20vw;
+    width: 80vw;
     justify-content: space-between;
 }
 .board {
     background-image: url("@/assets/images/board.png");
     background-size: 100% 100%;
-    transform: scale(1.75, 1.75);
-    background-repeat: no-repeat;
-    height: 30vh;
-    width: 30vw;
+    height: 42vh;
+    width: 108vw;
+    position: relative;
+    top: 30vh;
+    z-index: 100;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    justify-content: center;
 }
 
 .back {
-    width: 8vw;
-    height: 5vh;
-    border-style: none;
-    padding-bottom: 1vh;
+    text-align: center;
+    margin-top: 1vh;
+    width: 36vw;
+    height: 8vh;
     color: white;
-    background-color: transparent;
-    font-size: 1.7vh;
     font-family: "heebo";
+    font-size: 2.5vmax;
     background-image: url("@/assets/images/continueButton.png");
-    background-size: 100% 100%;
+    background-color: transparent;
+    border-style: none;
+    background-size: 100% 100%;  
 }
 .continue {
-    width: 8vw;
-    height: 5vh;
-    border-style: none;
-    padding-bottom: 1vh;
+    text-align: center;
+    margin-top: 1vh;
+    width: 36vw;
+    height: 8vh;
     color: white;
-    background-color: transparent;
-    font-size: 1.7vh;
     font-family: "heebo";
+    font-size: 2.5vmax;
     background-image: url("@/assets/images/continueButton.png");
+    background-color: transparent;
+    border-style: none;
     background-size: 100% 100%;
 }
 
 .page {
     display: flex;
-    height: 100%;
     flex-direction: column;
     align-items: center;
     direction: rtl;
-    margin-top: 7vh;
-    justify-content: space-around;
+    margin-top: 20vh;
 }
 
 .table {
-    width: 40vw;
-    height: 30vh;
+    position: relative;
+    bottom: 4vh;
+    width: 100vw;
+    height: 40vh;
 }
 </style>

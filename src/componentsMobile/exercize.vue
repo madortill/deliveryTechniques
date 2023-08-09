@@ -32,7 +32,7 @@ export default {
     <div id="exercize">
         <endScreen v-if="questionCounter === 12"></endScreen>
         <div v-else>
-            <Questions class="questions" @level="showQuestion" :questionCounter="questionCounter" v-show="visibleQuestion"></Questions>
+            <Questions @level="showQuestion" :questionCounter="questionCounter" v-show="visibleQuestion"></Questions>
             <Character :questionCounter="questionCounter" id="character" @update="showQuestion" v-show="visibleQuestion === false"></Character>
         </div>
     </div>
@@ -45,13 +45,8 @@ export default {
     height: 100%;
 }
 
-.questions {
-    height: 100%;
-    width: 100%;
-}
-
 #character {
-    height: 100%;
+    height: 100vh;
 }
 
 #exercize {
